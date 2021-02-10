@@ -1,0 +1,6 @@
+input/texts/*
+input/fonts/*
+.idea
+.ipynb_checkpoints
+TEMP
+__pycache__

@@ -1,0 +1,1114 @@
+{
+  "epochs": 100,
+  "current_epoch": 19,
+  "samples_per_epoch": -1,
+  "scale_epoch_size": 1,
+  "train_accum_steps": 1,
+  "verbose": 1,
+  "progbar_delta_time": 5,
+  "tf_cpp_min_log_level": 2,
+  "force_eager": false,
+  "skip_model_load_test": true,
+  "val_every_n": 1,
+  "lav_every_n": 0,
+  "checkpoint_dir": "/home/jovyan/output/models/calamari/calamari-lh_48-e_100-lstm_200-dropout_0.5-lr_0.001",
+  "write_checkpoints": true,
+  "export_best": true,
+  "export_final": false,
+  "no_train_scope": null,
+  "calc_ema": false,
+  "random_seed": null,
+  "profile": false,
+  "device_params": {
+    "gpus": [
+      0
+    ],
+    "gpu_auto_tune": false,
+    "gpu_memory": null,
+    "soft_device_placement": true,
+    "dist_strategy": "default"
+  },
+  "optimizer_params": {
+    "optimizer": "Adam",
+    "clip_grad": 5,
+    "momentum": 0.0,
+    "rho": 0.0,
+    "centered": false,
+    "beta_1": 0.9,
+    "beta_2": 0.999,
+    "epsilon": 1e-07
+  },
+  "learning_rate_params": {
+    "type": "Constant",
+    "lr": 0.001,
+    "learning_circle": 3,
+    "lr_decay_rate": 0.99,
+    "decay_fraction": 0.1,
+    "final_epochs": 50,
+    "step_function": true,
+    "warmup_epochs": 10,
+    "warmup_factor": 10,
+    "constant_epochs": 10,
+    "steps_per_epoch_": 2048,
+    "epochs_": 100
+  },
+  "scenario_params": {
+    "debug_graph_construction": false,
+    "debug_graph_n_examples": 1,
+    "print_eval_limit": 10,
+    "tensorboard_logger_history_size": 5,
+    "export_frozen": false,
+    "export_serve": true,
+    "model_params": {
+      "layers": [
+        {
+          "type": "convolutional",
+          "filters": 40,
+          "kernel_size": {
+            "x": 3,
+            "y": 3
+          },
+          "stride": {
+            "x": 1,
+            "y": 1
+          },
+          "dilated_depth": 0,
+          "concat_indices": [],
+          "hidden_nodes": 0,
+          "peepholes": false,
+          "lstm_direction": "bidirectional"
+        },
+        {
+          "type": "max_pooling",
+          "filters": 0,
+          "kernel_size": {
+            "x": 2,
+            "y": 2
+          },
+          "stride": {
+            "x": 2,
+            "y": 2
+          },
+          "dilated_depth": 0,
+          "concat_indices": [],
+          "hidden_nodes": 0,
+          "peepholes": false,
+          "lstm_direction": "bidirectional"
+        },
+        {
+          "type": "convolutional",
+          "filters": 60,
+          "kernel_size": {
+            "x": 3,
+            "y": 3
+          },
+          "stride": {
+            "x": 1,
+            "y": 1
+          },
+          "dilated_depth": 0,
+          "concat_indices": [],
+          "hidden_nodes": 0,
+          "peepholes": false,
+          "lstm_direction": "bidirectional"
+        },
+        {
+          "type": "max_pooling",
+          "filters": 0,
+          "kernel_size": {
+            "x": 2,
+            "y": 2
+          },
+          "stride": {
+            "x": 2,
+            "y": 2
+          },
+          "dilated_depth": 0,
+          "concat_indices": [],
+          "hidden_nodes": 0,
+          "peepholes": false,
+          "lstm_direction": "bidirectional"
+        },
+        {
+          "type": "lstm",
+          "filters": 0,
+          "kernel_size": {
+            "x": 0,
+            "y": 0
+          },
+          "stride": {
+            "x": 0,
+            "y": 0
+          },
+          "dilated_depth": 0,
+          "concat_indices": [],
+          "hidden_nodes": 200,
+          "peepholes": false,
+          "lstm_direction": "bidirectional"
+        }
+      ],
+      "dropout": 0.5,
+      "classes": 105,
+      "ctc_merge_repeated": true
+    },
+    "data_params": {
+      "train": {
+        "batch_size": 8,
+        "limit": -1,
+        "prefetch": 64,
+        "num_processes": 8,
+        "batch_drop_remainder": false,
+        "type": 1,
+        "skip_invalid": true,
+        "remove_invalid": true,
+        "files": [
+          "/home/jovyan/output/calamari/lines/train/*.png"
+        ],
+        "text_files": null,
+        "gt_extension": ".gt.txt",
+        "data_reader_args": {
+          "line_generator_params": null,
+          "text_generator_params": null,
+          "pad": null,
+          "text_index": 0
+        }
+      },
+      "val": {
+        "batch_size": 8,
+        "limit": -1,
+        "prefetch": 64,
+        "num_processes": 8,
+        "batch_drop_remainder": false,
+        "type": 1,
+        "skip_invalid": true,
+        "remove_invalid": true,
+        "files": [
+          "/home/jovyan/output/calamari/lines/test/*.png"
+        ],
+        "text_files": null,
+        "gt_extension": ".gt.txt",
+        "data_reader_args": {
+          "line_generator_params": null,
+          "text_generator_params": null,
+          "pad": null,
+          "text_index": 0
+        }
+      },
+      "preproc_max_tasks_per_child": 250,
+      "pre_processors_": {
+        "run_parallel": true,
+        "sample_processors": [
+          {
+            "name": "DataRangeNormalizer",
+            "modes": [
+              "training",
+              "prediction",
+              "evaluation"
+            ],
+            "args": {}
+          },
+          {
+            "name": "CenterNormalizer",
+            "modes": [
+              "training",
+              "prediction",
+              "evaluation"
+            ],
+            "args": {
+              "extra_params": [
+                4,
+                1.0,
+                0.3
+              ]
+            }
+          },
+          {
+            "name": "FinalPreparation",
+            "modes": [
+              "training",
+              "prediction",
+              "evaluation"
+            ],
+            "args": {
+              "normalize": true,
+              "invert": true,
+              "transpose": true,
+              "pad": 16,
+              "pad_value": false
+            }
+          },
+          {
+            "name": "TextNormalizer",
+            "modes": [
+              "training",
+              "targets",
+              "evaluation"
+            ],
+            "args": {
+              "unicode_normalization": "NFC"
+            }
+          },
+          {
+            "name": "TextRegularizer",
+            "modes": [
+              "training",
+              "targets",
+              "evaluation"
+            ],
+            "args": {
+              "replacements": [
+                {
+                  "old": "\u00b5",
+                  "new": "\u03bc",
+                  "regex": false
+                },
+                {
+                  "old": "\u2013",
+                  "new": "-",
+                  "regex": false
+                },
+                {
+                  "old": "\u2014",
+                  "new": "-",
+                  "regex": false
+                },
+                {
+                  "old": "\"",
+                  "new": "''",
+                  "regex": false
+                },
+                {
+                  "old": "`",
+                  "new": "'",
+                  "regex": false
+                },
+                {
+                  "old": "\u201c",
+                  "new": "''",
+                  "regex": false
+                },
+                {
+                  "old": "\u201d",
+                  "new": "''",
+                  "regex": false
+                },
+                {
+                  "old": "\u00b4",
+                  "new": "'",
+                  "regex": false
+                },
+                {
+                  "old": "\u2018",
+                  "new": "'",
+                  "regex": false
+                },
+                {
+                  "old": "\u2019",
+                  "new": "'",
+                  "regex": false
+                },
+                {
+                  "old": "\u201c",
+                  "new": "''",
+                  "regex": false
+                },
+                {
+                  "old": "\u201d",
+                  "new": "''",
+                  "regex": false
+                },
+                {
+                  "old": "\u201c",
+                  "new": "''",
+                  "regex": false
+                },
+                {
+                  "old": "\u201e",
+                  "new": ",,",
+                  "regex": false
+                },
+                {
+                  "old": "\u2026",
+                  "new": "...",
+                  "regex": false
+                },
+                {
+                  "old": "\u2032",
+                  "new": "'",
+                  "regex": false
+                },
+                {
+                  "old": "\u2033",
+                  "new": "''",
+                  "regex": false
+                },
+                {
+                  "old": "\u2034",
+                  "new": "'''",
+                  "regex": false
+                },
+                {
+                  "old": "\u3003",
+                  "new": "''",
+                  "regex": false
+                },
+                {
+                  "old": "\u2160",
+                  "new": "I",
+                  "regex": false
+                },
+                {
+                  "old": "\u2161",
+                  "new": "II",
+                  "regex": false
+                },
+                {
+                  "old": "\u2162",
+                  "new": "III",
+                  "regex": false
+                },
+                {
+                  "old": "\u2163",
+                  "new": "IV",
+                  "regex": false
+                },
+                {
+                  "old": "\u2164",
+                  "new": "V",
+                  "regex": false
+                },
+                {
+                  "old": "\u2165",
+                  "new": "VI",
+                  "regex": false
+                },
+                {
+                  "old": "\u2166",
+                  "new": "VII",
+                  "regex": false
+                },
+                {
+                  "old": "\u2167",
+                  "new": "VIII",
+                  "regex": false
+                },
+                {
+                  "old": "\u2168",
+                  "new": "IX",
+                  "regex": false
+                },
+                {
+                  "old": "\u2169",
+                  "new": "X",
+                  "regex": false
+                },
+                {
+                  "old": "\u216a",
+                  "new": "XI",
+                  "regex": false
+                },
+                {
+                  "old": "\u216b",
+                  "new": "XII",
+                  "regex": false
+                },
+                {
+                  "old": "\u216c",
+                  "new": "L",
+                  "regex": false
+                },
+                {
+                  "old": "\u216d",
+                  "new": "C",
+                  "regex": false
+                },
+                {
+                  "old": "\u216e",
+                  "new": "D",
+                  "regex": false
+                },
+                {
+                  "old": "\u216f",
+                  "new": "M",
+                  "regex": false
+                },
+                {
+                  "old": "\u2170",
+                  "new": "i",
+                  "regex": false
+                },
+                {
+                  "old": "\u2171",
+                  "new": "ii",
+                  "regex": false
+                },
+                {
+                  "old": "\u2172",
+                  "new": "iii",
+                  "regex": false
+                },
+                {
+                  "old": "\u2173",
+                  "new": "iv",
+                  "regex": false
+                },
+                {
+                  "old": "\u2174",
+                  "new": "v",
+                  "regex": false
+                },
+                {
+                  "old": "\u2175",
+                  "new": "vi",
+                  "regex": false
+                },
+                {
+                  "old": "\u2176",
+                  "new": "vii",
+                  "regex": false
+                },
+                {
+                  "old": "\u2177",
+                  "new": "viii",
+                  "regex": false
+                },
+                {
+                  "old": "\u2178",
+                  "new": "ix",
+                  "regex": false
+                },
+                {
+                  "old": "\u2179",
+                  "new": "x",
+                  "regex": false
+                },
+                {
+                  "old": "\u217a",
+                  "new": "xi",
+                  "regex": false
+                },
+                {
+                  "old": "\u217b",
+                  "new": "xii",
+                  "regex": false
+                },
+                {
+                  "old": "\u217c",
+                  "new": "l",
+                  "regex": false
+                },
+                {
+                  "old": "\u217d",
+                  "new": "c",
+                  "regex": false
+                },
+                {
+                  "old": "\u217e",
+                  "new": "d",
+                  "regex": false
+                },
+                {
+                  "old": "\u217f",
+                  "new": "m",
+                  "regex": false
+                },
+                {
+                  "old": "(?u)\\s+",
+                  "new": " ",
+                  "regex": true
+                },
+                {
+                  "old": "(?u)\\n",
+                  "new": "",
+                  "regex": true
+                },
+                {
+                  "old": "(?u)^\\s+",
+                  "new": "",
+                  "regex": true
+                },
+                {
+                  "old": "(?u)\\s+$",
+                  "new": "",
+                  "regex": true
+                }
+              ]
+            }
+          },
+          {
+            "name": "StripTextProcessor",
+            "modes": [
+              "training",
+              "targets",
+              "evaluation"
+            ],
+            "args": null
+          },
+          {
+            "name": "AugmentationProcessor",
+            "modes": [
+              "training"
+            ],
+            "args": {
+              "augmenter_type": "simple"
+            }
+          },
+          {
+            "name": "PrepareSampleProcessor",
+            "modes": [
+              "training",
+              "targets",
+              "prediction",
+              "evaluation"
+            ],
+            "args": null
+          }
+        ]
+      },
+      "post_processors_": {
+        "run_parallel": false,
+        "sample_processors": [
+          {
+            "name": "ReshapeOutputsProcessor",
+            "modes": [
+              "training",
+              "targets",
+              "prediction",
+              "evaluation"
+            ],
+            "args": null
+          },
+          {
+            "name": "CTCDecoderProcessor",
+            "modes": [
+              "training",
+              "targets",
+              "prediction",
+              "evaluation"
+            ],
+            "args": null
+          },
+          {
+            "name": "BidiTextProcessor",
+            "modes": [
+              "training",
+              "targets",
+              "prediction",
+              "evaluation"
+            ],
+            "args": null
+          },
+          {
+            "name": "StripTextProcessor",
+            "modes": [
+              "training",
+              "targets",
+              "prediction",
+              "evaluation"
+            ],
+            "args": null
+          },
+          {
+            "name": "TextNormalizer",
+            "modes": [
+              "training",
+              "targets",
+              "prediction",
+              "evaluation"
+            ],
+            "args": null
+          },
+          {
+            "name": "TextRegularizer",
+            "modes": [
+              "training",
+              "targets",
+              "prediction",
+              "evaluation"
+            ],
+            "args": null
+          },
+          {
+            "name": "TextNormalizer",
+            "modes": [
+              "training",
+              "targets",
+              "evaluation"
+            ],
+            "args": {
+              "unicode_normalization": "NFC"
+            }
+          },
+          {
+            "name": "TextRegularizer",
+            "modes": [
+              "training",
+              "targets",
+              "evaluation"
+            ],
+            "args": {
+              "replacements": [
+                {
+                  "old": "\u00b5",
+                  "new": "\u03bc",
+                  "regex": false
+                },
+                {
+                  "old": "\u2013",
+                  "new": "-",
+                  "regex": false
+                },
+                {
+                  "old": "\u2014",
+                  "new": "-",
+                  "regex": false
+                },
+                {
+                  "old": "\"",
+                  "new": "''",
+                  "regex": false
+                },
+                {
+                  "old": "`",
+                  "new": "'",
+                  "regex": false
+                },
+                {
+                  "old": "\u201c",
+                  "new": "''",
+                  "regex": false
+                },
+                {
+                  "old": "\u201d",
+                  "new": "''",
+                  "regex": false
+                },
+                {
+                  "old": "\u00b4",
+                  "new": "'",
+                  "regex": false
+                },
+                {
+                  "old": "\u2018",
+                  "new": "'",
+                  "regex": false
+                },
+                {
+                  "old": "\u2019",
+                  "new": "'",
+                  "regex": false
+                },
+                {
+                  "old": "\u201c",
+                  "new": "''",
+                  "regex": false
+                },
+                {
+                  "old": "\u201d",
+                  "new": "''",
+                  "regex": false
+                },
+                {
+                  "old": "\u201c",
+                  "new": "''",
+                  "regex": false
+                },
+                {
+                  "old": "\u201e",
+                  "new": ",,",
+                  "regex": false
+                },
+                {
+                  "old": "\u2026",
+                  "new": "...",
+                  "regex": false
+                },
+                {
+                  "old": "\u2032",
+                  "new": "'",
+                  "regex": false
+                },
+                {
+                  "old": "\u2033",
+                  "new": "''",
+                  "regex": false
+                },
+                {
+                  "old": "\u2034",
+                  "new": "'''",
+                  "regex": false
+                },
+                {
+                  "old": "\u3003",
+                  "new": "''",
+                  "regex": false
+                },
+                {
+                  "old": "\u2160",
+                  "new": "I",
+                  "regex": false
+                },
+                {
+                  "old": "\u2161",
+                  "new": "II",
+                  "regex": false
+                },
+                {
+                  "old": "\u2162",
+                  "new": "III",
+                  "regex": false
+                },
+                {
+                  "old": "\u2163",
+                  "new": "IV",
+                  "regex": false
+                },
+                {
+                  "old": "\u2164",
+                  "new": "V",
+                  "regex": false
+                },
+                {
+                  "old": "\u2165",
+                  "new": "VI",
+                  "regex": false
+                },
+                {
+                  "old": "\u2166",
+                  "new": "VII",
+                  "regex": false
+                },
+                {
+                  "old": "\u2167",
+                  "new": "VIII",
+                  "regex": false
+                },
+                {
+                  "old": "\u2168",
+                  "new": "IX",
+                  "regex": false
+                },
+                {
+                  "old": "\u2169",
+                  "new": "X",
+                  "regex": false
+                },
+                {
+                  "old": "\u216a",
+                  "new": "XI",
+                  "regex": false
+                },
+                {
+                  "old": "\u216b",
+                  "new": "XII",
+                  "regex": false
+                },
+                {
+                  "old": "\u216c",
+                  "new": "L",
+                  "regex": false
+                },
+                {
+                  "old": "\u216d",
+                  "new": "C",
+                  "regex": false
+                },
+                {
+                  "old": "\u216e",
+                  "new": "D",
+                  "regex": false
+                },
+                {
+                  "old": "\u216f",
+                  "new": "M",
+                  "regex": false
+                },
+                {
+                  "old": "\u2170",
+                  "new": "i",
+                  "regex": false
+                },
+                {
+                  "old": "\u2171",
+                  "new": "ii",
+                  "regex": false
+                },
+                {
+                  "old": "\u2172",
+                  "new": "iii",
+                  "regex": false
+                },
+                {
+                  "old": "\u2173",
+                  "new": "iv",
+                  "regex": false
+                },
+                {
+                  "old": "\u2174",
+                  "new": "v",
+                  "regex": false
+                },
+                {
+                  "old": "\u2175",
+                  "new": "vi",
+                  "regex": false
+                },
+                {
+                  "old": "\u2176",
+                  "new": "vii",
+                  "regex": false
+                },
+                {
+                  "old": "\u2177",
+                  "new": "viii",
+                  "regex": false
+                },
+                {
+                  "old": "\u2178",
+                  "new": "ix",
+                  "regex": false
+                },
+                {
+                  "old": "\u2179",
+                  "new": "x",
+                  "regex": false
+                },
+                {
+                  "old": "\u217a",
+                  "new": "xi",
+                  "regex": false
+                },
+                {
+                  "old": "\u217b",
+                  "new": "xii",
+                  "regex": false
+                },
+                {
+                  "old": "\u217c",
+                  "new": "l",
+                  "regex": false
+                },
+                {
+                  "old": "\u217d",
+                  "new": "c",
+                  "regex": false
+                },
+                {
+                  "old": "\u217e",
+                  "new": "d",
+                  "regex": false
+                },
+                {
+                  "old": "\u217f",
+                  "new": "m",
+                  "regex": false
+                },
+                {
+                  "old": "(?u)\\s+",
+                  "new": " ",
+                  "regex": true
+                },
+                {
+                  "old": "(?u)\\n",
+                  "new": "",
+                  "regex": true
+                },
+                {
+                  "old": "(?u)^\\s+",
+                  "new": "",
+                  "regex": true
+                },
+                {
+                  "old": "(?u)\\s+$",
+                  "new": "",
+                  "regex": true
+                }
+              ]
+            }
+          },
+          {
+            "name": "StripTextProcessor",
+            "modes": [
+              "training",
+              "targets",
+              "evaluation"
+            ],
+            "args": null
+          }
+        ]
+      },
+      "resource_base_path_": ".",
+      "skip_invalid_gt_": true,
+      "input_channels": 1,
+      "downscale_factor_": 4,
+      "line_height_": 48,
+      "raw_dataset": false,
+      "codec": {
+        "charset": [
+          "",
+          " ",
+          "!",
+          "#",
+          "$",
+          "%",
+          "&",
+          "'",
+          "(",
+          ")",
+          "*",
+          "+",
+          ",",
+          "-",
+          ".",
+          "/",
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          ":",
+          ";",
+          "=",
+          "?",
+          "@",
+          "[",
+          "]",
+          "_",
+          "{",
+          "|",
+          "}",
+          "\u00ab",
+          "\u00b0",
+          "\u00bb",
+          "\u0410",
+          "\u0411",
+          "\u0412",
+          "\u0413",
+          "\u0414",
+          "\u0415",
+          "\u0416",
+          "\u0417",
+          "\u0418",
+          "\u0419",
+          "\u041a",
+          "\u041b",
+          "\u041c",
+          "\u041d",
+          "\u041e",
+          "\u041f",
+          "\u0420",
+          "\u0421",
+          "\u0422",
+          "\u0423",
+          "\u0424",
+          "\u0425",
+          "\u0426",
+          "\u0427",
+          "\u0428",
+          "\u0429",
+          "\u042a",
+          "\u042b",
+          "\u042c",
+          "\u042d",
+          "\u042e",
+          "\u042f",
+          "\u0430",
+          "\u0431",
+          "\u0432",
+          "\u0433",
+          "\u0434",
+          "\u0435",
+          "\u0436",
+          "\u0437",
+          "\u0438",
+          "\u0439",
+          "\u043a",
+          "\u043b",
+          "\u043c",
+          "\u043d",
+          "\u043e",
+          "\u043f",
+          "\u0440",
+          "\u0441",
+          "\u0442",
+          "\u0443",
+          "\u0444",
+          "\u0445",
+          "\u0446",
+          "\u0447",
+          "\u0448",
+          "\u0449",
+          "\u044a",
+          "\u044b",
+          "\u044c",
+          "\u044d",
+          "\u044e",
+          "\u044f",
+          "\u2116"
+        ]
+      },
+      "data_aug_params": {
+        "reference": "relative",
+        "amount": 0,
+        "percentage": 0
+      }
+    },
+    "evaluator_params": {},
+    "export_net_config_": false,
+    "net_config_filename_": "net_config.json",
+    "frozen_dir_": "frozen",
+    "frozen_filename_": "frozen_model.pb",
+    "default_serve_dir_": "best.ckpt.h5",
+    "additional_serve_dir_": "additional",
+    "trainer_params_filename_": "best.ckpt.json",
+    "scenario_params_filename_": "scenario_params.json",
+    "scenario_base_path_": "/opt/conda/lib/python3.7/site-packages/calamari_ocr/ocr/scenario.py",
+    "scenario_module_": "calamari_ocr.ocr.scenario",
+    "id_": "calamari-lh_48-e_100-lstm_200-dropout_0.5-lr_0.001_calamari_ocr.ocr.scenario_2021-02-08",
+    "tfaip_commit_hash_": null,
+    "tfaip_version_": "1.0.1"
+  },
+  "warmstart_params": {
+    "model": null,
+    "allow_partial": false,
+    "trim_graph_name": true,
+    "rename": [],
+    "rename_targets": [],
+    "exclude": null,
+    "include": null,
+    "auto_remove_numbers_for": [
+      "lstm_cell"
+    ]
+  },
+  "early_stopping_params": {
+    "mode_": "min",
+    "current_": 0.07422486692667007,
+    "monitor_": "val_CER",
+    "n_": 2,
+    "best_model_output_dir": "/home/jovyan/output/models/calamari/calamari-lh_48-e_100-lstm_200-dropout_0.5-lr_0.001/",
+    "best_model_name": "",
+    "frequency": 5,
+    "n_to_go": 10,
+    "lower_threshold": 0.0,
+    "upper_threshold": 0.9
+  },
+  "saved_checkpoint_sub_dir_": "checkpoint/checkpoint_0015",
+  "checkpoint_sub_dir_": "checkpoint/checkpoint_{epoch:04d}",
+  "checkpoint_save_freq_": 5,
+  "version": 3,
+  "skip_invalid_gt": true,
+  "data_aug_retrain_on_original": true,
+  "current_stage": 0,
+  "codec_whitelist": [],
+  "keep_loaded_codec": false,
+  "preload_training": true,
+  "preload_validation": true,
+  "auto_compute_codec": true,
+  "progress_bar": true,
+  "auto_upgrade_checkpoints": true
+}

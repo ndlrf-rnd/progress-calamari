@@ -1,0 +1,2867 @@
+INFO     2021-02-08 11:10:46,362             tfaip.util.logging: Logging training progress to '/home/jovyan/output/models/calamari/calamari-lh_48-e_100-lstm_200-dropout_0.5-lr_0.001/train.log'
+INFO     2021-02-08 11:10:46,388       tfaip.base.device_config: Setting up device config DeviceConfigParams(gpus=[0], gpu_auto_tune=False, gpu_memory=None, soft_device_placement=True, dist_strategy=<DistributionStrategy.Default: 'default'>)
+INFO     2021-02-08 11:10:46,417 calamari_ocr.ocr.dataset.datar: Resolving input files
+INFO     2021-02-08 11:10:46,997 calamari_ocr.ocr.dataset.datar: Found 16384 files in the dataset
+INFO     2021-02-08 11:10:46,998 calamari_ocr.ocr.dataset.datar: Resolving input files
+INFO     2021-02-08 11:10:47,034 calamari_ocr.ocr.dataset.datar: Found 1024 files in the dataset
+INFO     2021-02-08 11:10:47,034 tfaip.base.data.pipeline.datap: Preloading: Converting training to raw pipeline.
+INFO     2021-02-08 11:13:20,498 tfaip.base.data.pipeline.datap: Preloading: Converting evaluation to raw pipeline.
+INFO     2021-02-08 11:13:36,427 tfaip.base.data.pipeline.datap: Preloading: Converting targets to raw pipeline.
+INFO     2021-02-08 11:13:36,599 tfaip.base.data.pipeline.datap: Preloading: Converting targets to raw pipeline.
+INFO     2021-02-08 11:13:36,681 calamari_ocr.ocr.training.trai: CODEC: ['', ' ', '!', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ':', ';', '=', '?', '@', '[', ']', '_', '{', '|', '}', '«', '°', '»', 'А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ж', 'З', 'И', 'Й', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ъ', 'Ы', 'Ь', 'Э', 'Ю', 'Я', 'а', 'б', 'в', 'г', 'д', 'е', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я', '№']
+INFO     2021-02-08 11:13:36,681 tfaip.base.data.pipeline.datap: Preloading: Converting training to raw pipeline.
+WARNING  2021-02-08 11:13:40,485 calamari_ocr.ocr.dataset.image: Skipping line with longer outputs than inputs (id=/home/jovyan/output/calamari/lines/train/012205.png)
+WARNING  2021-02-08 11:13:40,577 calamari_ocr.ocr.dataset.image: Skipping line with longer outputs than inputs (id=/home/jovyan/output/calamari/lines/train/013846.png)
+WARNING  2021-02-08 11:13:40,747 calamari_ocr.ocr.dataset.image: Skipping line with longer outputs than inputs (id=/home/jovyan/output/calamari/lines/train/009419.png)
+INFO     2021-02-08 11:13:44,226 tfaip.base.data.pipeline.datap: Preloading: Converting evaluation to raw pipeline.
+INFO     2021-02-08 11:13:45,769     tfaip.base.trainer.trainer: Setting samples per epoch relative to dataset size with a factor of 1. Note that this requires the creation of the data generator once before training.
+INFO     2021-02-08 11:13:45,770     tfaip.base.trainer.trainer: Set samples per epoch to 16384
+INFO     2021-02-08 11:13:45,782 tfaip.base.scenario.scenarioba: Building training graph
+INFO     2021-02-08 11:13:47,291 tfaip.base.scenario.scenarioba: Building prediction graph
+INFO     2021-02-08 11:13:48,294 tfaip.base.scenario.scenarioba: Building training keras model
+INFO     2021-02-08 11:13:48,302 tfaip.base.scenario.scenarioba: Attempting to set no train scope
+INFO     2021-02-08 11:13:48,302 tfaip.base.scenario.scenarioba: Building prediction/export keras model (for export and decoding)
+INFO     2021-02-08 11:13:48,309 tfaip.base.scenario.scenarioba: Compiling training model including optimization
+INFO     2021-02-08 11:13:48,324 tfaip.base.scenario.scenarioba: Compiling prediction model graph
+INFO     2021-02-08 11:13:48,331 tfaip.base.scenario.scenarioba: Models successfully constructed
+INFO     2021-02-08 11:13:48,332 tfaip.base.trainer.callbacks.e: Automatically selecting 'val_CER' instead of 'CER' for monitoring.
+INFO     2021-02-08 11:13:48,332 tfaip.base.trainer.callbacks.e: Early stopping enabled with n_to_go=10 and frequency=5.
+INFO     2021-02-08 11:13:48,332 tfaip.base.trainer.callbacks.t: Removing old event files from '/home/jovyan/output/models/calamari/calamari-lh_48-e_100-lstm_200-dropout_0.5-lr_0.001'
+INFO     2021-02-08 11:13:48,332     tfaip.base.trainer.trainer: Starting training in epoch 0. 100 remaining.
+INFO     2021-02-08 11:13:48,332 tfaip.base.scenario.scenarioba: Model: "functional_1"
+INFO     2021-02-08 11:13:48,332 tfaip.base.scenario.scenarioba: __________________________________________________________________________________________________
+INFO     2021-02-08 11:13:48,332 tfaip.base.scenario.scenarioba: Layer (type)                    Output Shape         Param #     Connected to                     
+INFO     2021-02-08 11:13:48,332 tfaip.base.scenario.scenarioba: ==================================================================================================
+INFO     2021-02-08 11:13:48,333 tfaip.base.scenario.scenarioba: epoch (InputLayer)              [(None, 1)]          0                                            
+INFO     2021-02-08 11:13:48,333 tfaip.base.scenario.scenarioba: __________________________________________________________________________________________________
+INFO     2021-02-08 11:13:48,333 tfaip.base.scenario.scenarioba: gt (InputLayer)                 [(None, None)]       0                                            
+INFO     2021-02-08 11:13:48,333 tfaip.base.scenario.scenarioba: __________________________________________________________________________________________________
+INFO     2021-02-08 11:13:48,333 tfaip.base.scenario.scenarioba: gt_len (InputLayer)             [(None, 1)]          0                                            
+INFO     2021-02-08 11:13:48,333 tfaip.base.scenario.scenarioba: __________________________________________________________________________________________________
+INFO     2021-02-08 11:13:48,333 tfaip.base.scenario.scenarioba: img (InputLayer)                [(None, None, 48, 1) 0                                            
+INFO     2021-02-08 11:13:48,333 tfaip.base.scenario.scenarioba: __________________________________________________________________________________________________
+INFO     2021-02-08 11:13:48,333 tfaip.base.scenario.scenarioba: img_len (InputLayer)            [(None, 1)]          0                                            
+INFO     2021-02-08 11:13:48,333 tfaip.base.scenario.scenarioba: __________________________________________________________________________________________________
+INFO     2021-02-08 11:13:48,333 tfaip.base.scenario.scenarioba: meta (InputLayer)               [(None, 1)]          0                                            
+INFO     2021-02-08 11:13:48,333 tfaip.base.scenario.scenarioba: __________________________________________________________________________________________________
+INFO     2021-02-08 11:13:48,334 tfaip.base.scenario.scenarioba: step (InputLayer)               [(None, 1)]          0                                            
+INFO     2021-02-08 11:13:48,334 tfaip.base.scenario.scenarioba: __________________________________________________________________________________________________
+INFO     2021-02-08 11:13:48,334 tfaip.base.scenario.scenarioba: CalamariGraph (Graph)           {'blank_last_logits' 1537765     epoch[0][0]                      
+INFO     2021-02-08 11:13:48,335 tfaip.base.scenario.scenarioba:                                                                  gt[0][0]                         
+INFO     2021-02-08 11:13:48,335 tfaip.base.scenario.scenarioba:                                                                  gt_len[0][0]                     
+INFO     2021-02-08 11:13:48,335 tfaip.base.scenario.scenarioba:                                                                  img[0][0]                        
+INFO     2021-02-08 11:13:48,335 tfaip.base.scenario.scenarioba:                                                                  img_len[0][0]                    
+INFO     2021-02-08 11:13:48,335 tfaip.base.scenario.scenarioba:                                                                  meta[0][0]                       
+INFO     2021-02-08 11:13:48,335 tfaip.base.scenario.scenarioba:                                                                  step[0][0]                       
+INFO     2021-02-08 11:13:48,335 tfaip.base.scenario.scenarioba: __________________________________________________________________________________________________
+INFO     2021-02-08 11:13:48,335 tfaip.base.scenario.scenarioba: tf_op_layer_Reshape (TensorFlow [(None,)]            0           CalamariGraph[0][4]              
+INFO     2021-02-08 11:13:48,335 tfaip.base.scenario.scenarioba: __________________________________________________________________________________________________
+INFO     2021-02-08 11:13:48,335 tfaip.base.scenario.scenarioba: tf_op_layer_Reshape_1 (TensorFl [(None,)]            0           gt_len[0][0]                     
+INFO     2021-02-08 11:13:48,335 tfaip.base.scenario.scenarioba: __________________________________________________________________________________________________
+INFO     2021-02-08 11:13:48,335 tfaip.base.scenario.scenarioba: print_evaluate_layer (PrintEval (None, None, 105)    1           CalamariGraph[0][0]              
+INFO     2021-02-08 11:13:48,335 tfaip.base.scenario.scenarioba:                                                                  img[0][0]                        
+INFO     2021-02-08 11:13:48,336 tfaip.base.scenario.scenarioba:                                                                  img_len[0][0]                    
+INFO     2021-02-08 11:13:48,336 tfaip.base.scenario.scenarioba:                                                                  meta[0][0]                       
+INFO     2021-02-08 11:13:48,336 tfaip.base.scenario.scenarioba:                                                                  CalamariGraph[0][0]              
+INFO     2021-02-08 11:13:48,336 tfaip.base.scenario.scenarioba:                                                                  CalamariGraph[0][1]              
+INFO     2021-02-08 11:13:48,336 tfaip.base.scenario.scenarioba:                                                                  CalamariGraph[0][2]              
+INFO     2021-02-08 11:13:48,336 tfaip.base.scenario.scenarioba:                                                                  CalamariGraph[0][3]              
+INFO     2021-02-08 11:13:48,336 tfaip.base.scenario.scenarioba:                                                                  CalamariGraph[0][4]              
+INFO     2021-02-08 11:13:48,336 tfaip.base.scenario.scenarioba:                                                                  CalamariGraph[0][5]              
+INFO     2021-02-08 11:13:48,336 tfaip.base.scenario.scenarioba:                                                                  gt[0][0]                         
+INFO     2021-02-08 11:13:48,336 tfaip.base.scenario.scenarioba:                                                                  gt_len[0][0]                     
+INFO     2021-02-08 11:13:48,336 tfaip.base.scenario.scenarioba: __________________________________________________________________________________________________
+INFO     2021-02-08 11:13:48,336 tfaip.base.scenario.scenarioba: tf_op_layer_ExpandDims (TensorF [(None, 1)]          0           tf_op_layer_Reshape[0][0]        
+INFO     2021-02-08 11:13:48,336 tfaip.base.scenario.scenarioba: __________________________________________________________________________________________________
+INFO     2021-02-08 11:13:48,336 tfaip.base.scenario.scenarioba: tf_op_layer_ExpandDims_1 (Tenso [(None, 1)]          0           tf_op_layer_Reshape_1[0][0]      
+INFO     2021-02-08 11:13:48,336 tfaip.base.scenario.scenarioba: __________________________________________________________________________________________________
+INFO     2021-02-08 11:13:48,336 tfaip.base.scenario.scenarioba: cer (Lambda)                    None                 0           CalamariGraph[0][2]              
+INFO     2021-02-08 11:13:48,336 tfaip.base.scenario.scenarioba:                                                                  gt[0][0]                         
+INFO     2021-02-08 11:13:48,337 tfaip.base.scenario.scenarioba:                                                                  gt_len[0][0]                     
+INFO     2021-02-08 11:13:48,337 tfaip.base.scenario.scenarioba: __________________________________________________________________________________________________
+INFO     2021-02-08 11:13:48,337 tfaip.base.scenario.scenarioba: tf_op_layer_blank_last_logits_  [(None, None, 105)]  0           print_evaluate_layer[0][0]       
+INFO     2021-02-08 11:13:48,337 tfaip.base.scenario.scenarioba: __________________________________________________________________________________________________
+INFO     2021-02-08 11:13:48,337 tfaip.base.scenario.scenarioba: ctc (Lambda)                    (None, 1)            0           gt[0][0]                         
+INFO     2021-02-08 11:13:48,337 tfaip.base.scenario.scenarioba:                                                                  CalamariGraph[0][1]              
+INFO     2021-02-08 11:13:48,337 tfaip.base.scenario.scenarioba:                                                                  tf_op_layer_ExpandDims[0][0]     
+INFO     2021-02-08 11:13:48,337 tfaip.base.scenario.scenarioba:                                                                  tf_op_layer_ExpandDims_1[0][0]   
+INFO     2021-02-08 11:13:48,337 tfaip.base.scenario.scenarioba: ==================================================================================================
+INFO     2021-02-08 11:13:48,338 tfaip.base.scenario.scenarioba: Total params: 1,537,766
+INFO     2021-02-08 11:13:48,338 tfaip.base.scenario.scenarioba: Trainable params: 1,537,765
+INFO     2021-02-08 11:13:48,338 tfaip.base.scenario.scenarioba: Non-trainable params: 1
+INFO     2021-02-08 11:13:48,338 tfaip.base.scenario.scenarioba: __________________________________________________________________________________________________
+INFO     2021-02-08 11:13:50,233 tfaip.base.trainer.callbacks.l: Start of epoch    1
+INFO     2021-02-08 11:14:45,917 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 11:14:45,927 tfaip.base.scenario.util.print: 
+  CER:  0.09523809523809523
+  PRED: '‪оназалась на территории заладного берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 11:14:45,938 tfaip.base.scenario.util.print: 
+  CER:  0.02127659574468085
+  PRED: '‪лидерами - элитой в иироком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 11:14:45,951 tfaip.base.scenario.util.print: 
+  CER:  0.5531914893617021
+  PRED: '‪илновти првийенте иелуоноти деабсехи‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 11:14:45,960 tfaip.base.scenario.util.print: 
+  CER:  0.022727272727272728
+  PRED: '‪напротив, традиционно крайне лояльны к нему‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 11:14:45,975 tfaip.base.scenario.util.print: 
+  CER:  0.6136363636363636
+  PRED: '‪Роалотвы м смсзныл прчаасокимя мекатстчых анчидсе‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 11:14:45,987 tfaip.base.scenario.util.print: 
+  CER:  0.22916666666666666
+  PRED: '‪этот пост бад мабрет веи ыскови, представител‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 11:14:46,005 tfaip.base.scenario.util.print: 
+  CER:  0.5254237288135594
+  PRED: '‪Сахар втоламиаи соралмлни пранилих, ма выо сти и и‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 11:14:46,016 tfaip.base.scenario.util.print: 
+  CER:  0.16666666666666666
+  PRED: '‪бодрый духом, совериил я пене путенестви о Каожаоу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 11:14:46,042 tfaip.base.scenario.util.print: 
+  CER:  0.15217391304347827
+  PRED: '‪магит Мелдон Адельсом, 7отетний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 11:14:46,065 tfaip.base.scenario.util.print: 
+  CER:  0.25609756097560976
+  PRED: '‪меканиама скребутся какле-то части, что проем олено металически олмлол‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 11:14:47,645 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:00:57 | EPOCH 00:57.41 | TRAIN 00:54.51 | TEST 00:02.91 | BATCH 0.027s
+INFO     2021-02-08 11:14:47,645 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 00:57.41 | TRAIN 00:54.51 | TEST 00:02.91 | BATCH 0.027s
+INFO     2021-02-08 11:14:47,646 tfaip.base.trainer.callbacks.e: Better value of val_CER found. Old = None, Best = 0.22234053909778595
+INFO     2021-02-08 11:14:47,683 tfaip.base.trainer.callbacks.l: Results of epoch    1: CER: 0.5467 - ctc_loss: 93.1262 - loss: 93.1262 - val_CER: 0.2223 - val_ctc_loss: 43.0954 - val_loss: 43.0954
+INFO     2021-02-08 11:14:47,684 tfaip.base.trainer.callbacks.l: Start of epoch    2
+INFO     2021-02-08 11:15:37,269 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 11:15:37,277 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪оказалась на территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 11:15:37,285 tfaip.base.scenario.util.print: 
+  CER:  0.02127659574468085
+  PRED: '‪лидерами - элитой в иироком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 11:15:37,298 tfaip.base.scenario.util.print: 
+  CER:  0.44680851063829785
+  PRED: '‪еижноснти преомденте иеиусмонае Лиеабезежи‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 11:15:37,305 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 11:15:37,317 tfaip.base.scenario.util.print: 
+  CER:  0.5454545454545454
+  PRED: '‪Волветвы м смезныл прчоседкнии мскитстчых пнендке‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 11:15:37,327 tfaip.base.scenario.util.print: 
+  CER:  0.14583333333333334
+  PRED: '‪этот пост быд иабре вен Зысковиу, представиель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 11:15:37,342 tfaip.base.scenario.util.print: 
+  CER:  0.4406779661016949
+  PRED: '‪Сахар втламенем соереольныыи креанаи, ла уо сти и н‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 11:15:37,352 tfaip.base.scenario.util.print: 
+  CER:  0.07407407407407407
+  PRED: '‪бодрый духом, совериил я пеше путенестви по Кавказу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 11:15:37,375 tfaip.base.scenario.util.print: 
+  CER:  0.043478260869565216
+  PRED: '‪магнт Шепдон Адельсон, 77-летний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 11:15:37,578 tfaip.base.scenario.util.print: 
+  CER:  0.23170731707317074
+  PRED: '‪меканизма скребутея какне-то части, что првел овоено металическо млоа в‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 11:15:39,184 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:01:48 | EPOCH 00:54.46 | TRAIN 00:52.00 | TEST 00:02.45 | BATCH 0.025s
+INFO     2021-02-08 11:15:39,184 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 00:51.50 | TRAIN 00:49.50 | TEST 00:01.00 | BATCH 0.024s
+INFO     2021-02-08 11:15:39,184 tfaip.base.trainer.callbacks.e: Better value of val_CER found. Old = 0.22234053909778595, Best = 0.1429794281721115
+INFO     2021-02-08 11:15:39,218 tfaip.base.trainer.callbacks.l: Results of epoch    2: CER: 0.1992 - ctc_loss: 38.1391 - loss: 38.1391 - val_CER: 0.1430 - val_ctc_loss: 29.2439 - val_loss: 29.2439
+INFO     2021-02-08 11:15:39,219 tfaip.base.trainer.callbacks.l: Start of epoch    3
+INFO     2021-02-08 11:16:28,750 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 11:16:28,758 tfaip.base.scenario.util.print: 
+  CER:  0.023809523809523808
+  PRED: '‪оказалась на территории Заладного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 11:16:28,766 tfaip.base.scenario.util.print: 
+  CER:  0.02127659574468085
+  PRED: '‪лидерами - элитой в иироком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 11:16:28,778 tfaip.base.scenario.util.print: 
+  CER:  0.44680851063829785
+  PRED: '‪вияности преоидента сиелусмона ле десабезежи‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 11:16:28,786 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 11:16:28,799 tfaip.base.scenario.util.print: 
+  CER:  0.5227272727272727
+  PRED: '‪Валветвы и сиезныл порчоведкния мскитстчых врадасе‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 11:16:28,808 tfaip.base.scenario.util.print: 
+  CER:  0.125
+  PRED: '‪этот пост бнил избря ден Зыскови, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 11:16:28,823 tfaip.base.scenario.util.print: 
+  CER:  0.3898305084745763
+  PRED: '‪Сахар втаминсли соециальни косаниаи, ли бо сти и‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 11:16:28,833 tfaip.base.scenario.util.print: 
+  CER:  0.05555555555555555
+  PRED: '‪бодрый духом, совериил я пеше путешествше по Кавказу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 11:16:28,871 tfaip.base.scenario.util.print: 
+  CER:  0.043478260869565216
+  PRED: '‪магнат (елдон Адельсон, 77летний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 11:16:28,889 tfaip.base.scenario.util.print: 
+  CER:  0.23170731707317074
+  PRED: '‪мсканизма сктребутся какие то части, что привел овоенино металическико ололв‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 11:16:30,461 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:02:40 | EPOCH 00:53.38 | TRAIN 00:51.15 | TEST 00:02.23 | BATCH 0.025s
+INFO     2021-02-08 11:16:30,461 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 00:51.24 | TRAIN 00:49.45 | TEST 00:01.79 | BATCH 0.024s
+INFO     2021-02-08 11:16:30,461 tfaip.base.trainer.callbacks.e: Better value of val_CER found. Old = 0.1429794281721115, Best = 0.11867626756429672
+INFO     2021-02-08 11:16:30,494 tfaip.base.trainer.callbacks.l: Results of epoch    3: CER: 0.1466 - ctc_loss: 29.0998 - loss: 29.0998 - val_CER: 0.1187 - val_ctc_loss: 25.0038 - val_loss: 25.0038
+INFO     2021-02-08 11:16:30,496 tfaip.base.trainer.callbacks.l: Start of epoch    4
+INFO     2021-02-08 11:17:20,084 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 11:17:20,091 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪оказалась на территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 11:17:20,099 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 11:17:20,109 tfaip.base.scenario.util.print: 
+  CER:  0.425531914893617
+  PRED: '‪ожности преоидента сисиусмонасе дизабвзежи‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 11:17:20,116 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 11:17:20,126 tfaip.base.scenario.util.print: 
+  CER:  0.36363636363636365
+  PRED: '‪Молвтвы и сиены проведкиме мскототых порхасе‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 11:17:20,135 tfaip.base.scenario.util.print: 
+  CER:  0.08333333333333333
+  PRED: '‪этот пост бнл избра бен Зыскови, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 11:17:20,149 tfaip.base.scenario.util.print: 
+  CER:  0.4745762711864407
+  PRED: '‪Сахар втпамовлми спервольнви кораткаих, л мо гт и‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 11:17:20,158 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 11:17:20,184 tfaip.base.scenario.util.print: 
+  CER:  0.06521739130434782
+  PRED: '‪магнат Шепдон Адельсон, 77 тетний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 11:17:20,200 tfaip.base.scenario.util.print: 
+  CER:  0.1951219512195122
+  PRED: '‪меканизма сктребутся какие то части, что привел повоениню металическикоилол‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 11:17:21,829 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:03:31 | EPOCH 00:52.87 | TRAIN 00:50.74 | TEST 00:02.13 | BATCH 0.025s
+INFO     2021-02-08 11:17:21,830 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 00:51.33 | TRAIN 00:49.51 | TEST 00:01.82 | BATCH 0.024s
+INFO     2021-02-08 11:17:21,830 tfaip.base.trainer.callbacks.e: Better value of val_CER found. Old = 0.11867626756429672, Best = 0.10272470861673355
+INFO     2021-02-08 11:17:21,863 tfaip.base.trainer.callbacks.l: Results of epoch    4: CER: 0.1231 - ctc_loss: 24.9500 - loss: 24.9500 - val_CER: 0.1027 - val_ctc_loss: 22.2097 - val_loss: 22.2097
+INFO     2021-02-08 11:17:21,865 tfaip.base.trainer.callbacks.l: Start of epoch    5
+INFO     2021-02-08 11:18:11,639 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 11:18:11,647 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪оказалась на территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 11:18:11,655 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 11:18:11,665 tfaip.base.scenario.util.print: 
+  CER:  0.3617021276595745
+  PRED: '‪еляности преидента пиелусмонале Песабвнсжи‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 11:18:11,672 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 11:18:11,683 tfaip.base.scenario.util.print: 
+  CER:  0.36363636363636365
+  PRED: '‪Молвитвы м сиезны прчоведкнмо мекототых порхдке‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 11:18:11,692 tfaip.base.scenario.util.print: 
+  CER:  0.10416666666666667
+  PRED: '‪этот пост бнил избрвн бен Зыскови, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 11:18:11,707 tfaip.base.scenario.util.print: 
+  CER:  0.3559322033898305
+  PRED: '‪Сакар втламоналми спецеальнми косанкаих, л бо сти и ив‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 11:18:11,716 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 11:18:11,744 tfaip.base.scenario.util.print: 
+  CER:  0.043478260869565216
+  PRED: '‪магнат Шепдон Адельсон, 77-етний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 11:18:11,763 tfaip.base.scenario.util.print: 
+  CER:  0.15853658536585366
+  PRED: '‪меканизма сктребутся какие то части, что привел повлениню металическико илои в‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 11:18:13,359 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:04:23 | EPOCH 00:52.60 | TRAIN 00:50.53 | TEST 00:02.06 | BATCH 0.025s
+INFO     2021-02-08 11:18:13,359 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 00:51.49 | TRAIN 00:49.69 | TEST 00:01.80 | BATCH 0.024s
+INFO     2021-02-08 11:18:13,359 tfaip.base.trainer.callbacks.e: Better value of val_CER found. Old = 0.10272470861673355, Best = 0.09487420320510864
+INFO     2021-02-08 11:18:13,393 tfaip.base.trainer.callbacks.l: Results of epoch    5: CER: 0.1104 - ctc_loss: 22.5687 - loss: 22.5687 - val_CER: 0.0949 - val_ctc_loss: 20.7587 - val_loss: 20.7587
+INFO     2021-02-08 11:18:13,395 tfaip.base.trainer.callbacks.l: Start of epoch    6
+INFO     2021-02-08 11:19:02,948 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 11:19:02,955 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪оказалась на территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 11:19:02,963 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 11:19:02,973 tfaip.base.scenario.util.print: 
+  CER:  0.44680851063829785
+  PRED: '‪етяности преидена сеиусмота е Диеабеяежи‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 11:19:02,981 tfaip.base.scenario.util.print: 
+  CER:  0.022727272727272728
+  PRED: '‪напротив, традиционно крайне лояльны к нему:‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 11:19:02,990 tfaip.base.scenario.util.print: 
+  CER:  0.36363636363636365
+  PRED: '‪Молвтвыл и скены проведкнме мекатотых похдке‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 11:19:02,999 tfaip.base.scenario.util.print: 
+  CER:  0.0625
+  PRED: '‪этот пост быил избран бен Зыскови, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 11:19:03,011 tfaip.base.scenario.util.print: 
+  CER:  0.4406779661016949
+  PRED: '‪Сахар втпамовеии спецеальныи кортниаик, ля бмл тиг‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 11:19:03,020 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 11:19:03,045 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 11:19:03,059 tfaip.base.scenario.util.print: 
+  CER:  0.14634146341463414
+  PRED: '‪меканизма скребутся какие-то части, что привел повлениню металически олилол‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 11:19:04,638 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:05:14 | EPOCH 00:52.37 | TRAIN 00:50.36 | TEST 00:02.02 | BATCH 0.025s
+INFO     2021-02-08 11:19:04,639 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 00:51.24 | TRAIN 00:49.47 | TEST 00:01.77 | BATCH 0.024s
+INFO     2021-02-08 11:19:04,639 tfaip.base.trainer.callbacks.e: Better value of val_CER found. Old = 0.09487420320510864, Best = 0.0895083025097847
+INFO     2021-02-08 11:19:04,672 tfaip.base.trainer.callbacks.l: Results of epoch    6: CER: 0.1010 - ctc_loss: 20.7919 - loss: 20.7919 - val_CER: 0.0895 - val_ctc_loss: 20.8012 - val_loss: 20.8012
+INFO     2021-02-08 11:19:04,674 tfaip.base.trainer.callbacks.l: Start of epoch    7
+INFO     2021-02-08 11:19:54,309 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 11:19:54,316 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪оказалась на территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 11:19:54,323 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 11:19:54,334 tfaip.base.scenario.util.print: 
+  CER:  0.3829787234042553
+  PRED: '‪еижносии преоидента среиусмотатее ниесабваожи‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 11:19:54,341 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 11:19:54,351 tfaip.base.scenario.util.print: 
+  CER:  0.3181818181818182
+  PRED: '‪Волвитвы и сиены проведкние некототых пахасе‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 11:19:54,360 tfaip.base.scenario.util.print: 
+  CER:  0.041666666666666664
+  PRED: '‪этот пост быил избран бен Зыскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 11:19:54,373 tfaip.base.scenario.util.print: 
+  CER:  0.4576271186440678
+  PRED: '‪Сакаро втламнвели спецеальнвныи коранкаи, с г ии‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 11:19:54,382 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 11:19:54,402 tfaip.base.scenario.util.print: 
+  CER:  0.021739130434782608
+  PRED: '‪магнат Шепдон Адельсон, 77-летний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 11:19:54,416 tfaip.base.scenario.util.print: 
+  CER:  0.17073170731707318
+  PRED: '‪мсканизма сктребутся какие-то части, что привел повлениню металическик илод и‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 11:19:55,986 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:06:05 | EPOCH 00:52.22 | TRAIN 00:50.24 | TEST 00:01.98 | BATCH 0.024s
+INFO     2021-02-08 11:19:55,986 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 00:51.31 | TRAIN 00:49.56 | TEST 00:01.75 | BATCH 0.024s
+INFO     2021-02-08 11:19:55,986 tfaip.base.trainer.callbacks.e: Better value of val_CER found. Old = 0.0895083025097847, Best = 0.0883808359503746
+INFO     2021-02-08 11:19:56,020 tfaip.base.trainer.callbacks.l: Results of epoch    7: CER: 0.0947 - ctc_loss: 19.4592 - loss: 19.4592 - val_CER: 0.0884 - val_ctc_loss: 19.5525 - val_loss: 19.5525
+INFO     2021-02-08 11:19:56,022 tfaip.base.trainer.callbacks.l: Start of epoch    8
+INFO     2021-02-08 11:20:45,698 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 11:20:45,705 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪оказалась на территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 11:20:45,713 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 11:20:45,723 tfaip.base.scenario.util.print: 
+  CER:  0.425531914893617
+  PRED: '‪оитяности преоидента гиедусмоназте ниезабваежи‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 11:20:45,731 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 11:20:45,740 tfaip.base.scenario.util.print: 
+  CER:  0.36363636363636365
+  PRED: '‪Молвитвы м скены проведкнмо мекототых похаке‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 11:20:45,748 tfaip.base.scenario.util.print: 
+  CER:  0.020833333333333332
+  PRED: '‪этот пост был избран бен Зыскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 11:20:45,761 tfaip.base.scenario.util.print: 
+  CER:  0.3898305084745763
+  PRED: '‪Сакар втламовалми спервальнкыми коранкамх, бмл т ит‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 11:20:45,771 tfaip.base.scenario.util.print: 
+  CER:  0.018518518518518517
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавктазу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 11:20:45,795 tfaip.base.scenario.util.print: 
+  CER:  0.043478260869565216
+  PRED: '‪магнат Шепдон Адельсон, 77летний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 11:20:45,808 tfaip.base.scenario.util.print: 
+  CER:  0.12195121951219512
+  PRED: '‪меканизма скребутся какие-то части, что привел повлениню металически оило в‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 11:20:47,431 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:06:57 | EPOCH 00:52.12 | TRAIN 00:50.16 | TEST 00:01.96 | BATCH 0.024s
+INFO     2021-02-08 11:20:47,431 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 00:51.41 | TRAIN 00:49.60 | TEST 00:01.81 | BATCH 0.024s
+INFO     2021-02-08 11:20:47,431 tfaip.base.trainer.callbacks.e: Better value of val_CER found. Old = 0.0883808359503746, Best = 0.08468525111675262
+INFO     2021-02-08 11:20:47,465 tfaip.base.trainer.callbacks.l: Results of epoch    8: CER: 0.0898 - ctc_loss: 18.4671 - loss: 18.4671 - val_CER: 0.0847 - val_ctc_loss: 19.6302 - val_loss: 19.6302
+INFO     2021-02-08 11:20:47,467 tfaip.base.trainer.callbacks.l: Start of epoch    9
+INFO     2021-02-08 11:21:37,354 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 11:21:37,361 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪оказалась на территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 11:21:37,369 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 11:21:37,378 tfaip.base.scenario.util.print: 
+  CER:  0.3829787234042553
+  PRED: '‪ежности преоидента едусмона е Пиеабенежи‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 11:21:37,385 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 11:21:37,394 tfaip.base.scenario.util.print: 
+  CER:  0.3181818181818182
+  PRED: '‪Молвтвы м скены провсдкнио некоторых пахаке‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 11:21:37,402 tfaip.base.scenario.util.print: 
+  CER:  0.020833333333333332
+  PRED: '‪этот пост был избран бен Зыскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 11:21:37,416 tfaip.base.scenario.util.print: 
+  CER:  0.3220338983050847
+  PRED: '‪Сахар отламовели спереальными кореткамх, бол сти и ии‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 11:21:37,425 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 11:21:37,453 tfaip.base.scenario.util.print: 
+  CER:  0.043478260869565216
+  PRED: '‪магнат Шепдон Адельсон, 77 летний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 11:21:37,468 tfaip.base.scenario.util.print: 
+  CER:  0.12195121951219512
+  PRED: '‪меканизма скребутся какие-то части, что привело повлениню металическико илои в‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 11:21:39,122 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:07:48 | EPOCH 00:52.07 | TRAIN 00:50.12 | TEST 00:01.94 | BATCH 0.024s
+INFO     2021-02-08 11:21:39,122 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 00:51.65 | TRAIN 00:49.81 | TEST 00:01.85 | BATCH 0.024s
+INFO     2021-02-08 11:21:39,123 tfaip.base.trainer.callbacks.e: Better value of val_CER found. Old = 0.08468525111675262, Best = 0.08186658471822739
+INFO     2021-02-08 11:21:39,156 tfaip.base.trainer.callbacks.l: Results of epoch    9: CER: 0.0861 - ctc_loss: 17.5940 - loss: 17.5940 - val_CER: 0.0819 - val_ctc_loss: 18.4507 - val_loss: 18.4507
+INFO     2021-02-08 11:21:39,158 tfaip.base.trainer.callbacks.l: Start of epoch   10
+INFO     2021-02-08 11:22:29,205 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 11:22:29,214 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪оказалась на территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 11:22:29,224 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 11:22:29,236 tfaip.base.scenario.util.print: 
+  CER:  0.3191489361702128
+  PRED: '‪елжности преидента средусмоназне Диезабвнежи‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 11:22:29,244 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 11:22:29,254 tfaip.base.scenario.util.print: 
+  CER:  0.2727272727272727
+  PRED: '‪Молитвы и скены проведкнмо некоторых похаке‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 11:22:29,263 tfaip.base.scenario.util.print: 
+  CER:  0.020833333333333332
+  PRED: '‪этот пост был избран бен Зыскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 11:22:29,280 tfaip.base.scenario.util.print: 
+  CER:  0.4067796610169492
+  PRED: '‪Саларо втламовели спереальными коренками, л и ини‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 11:22:29,290 tfaip.base.scenario.util.print: 
+  CER:  0.018518518518518517
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавктазу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 11:22:29,314 tfaip.base.scenario.util.print: 
+  CER:  0.043478260869565216
+  PRED: '‪магнат Шелдон Адельсон, 77етний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 11:22:29,331 tfaip.base.scenario.util.print: 
+  CER:  0.15853658536585366
+  PRED: '‪меканизма сктребутся какие-то части, что привело повлениню металичесик или в‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 11:22:30,932 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:08:40 | EPOCH 00:52.04 | TRAIN 00:50.11 | TEST 00:01.93 | BATCH 0.024s
+INFO     2021-02-08 11:22:30,932 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 00:51.77 | TRAIN 00:49.96 | TEST 00:01.81 | BATCH 0.024s
+INFO     2021-02-08 11:22:30,932 tfaip.base.trainer.callbacks.e: Early stopping progressed. (remaining iteration without improvement: 9)
+INFO     2021-02-08 11:22:30,932 tfaip.base.trainer.callbacks.e: No better value of val_CER = 0.08478964120149612 found. Keeping best = 0.08186658471822739
+INFO     2021-02-08 11:22:30,934 tfaip.base.trainer.callbacks.l: Results of epoch   10: CER: 0.0828 - ctc_loss: 16.8817 - loss: 16.8817 - val_CER: 0.0848 - val_ctc_loss: 18.4507 - val_loss: 18.4507
+INFO     2021-02-08 11:22:30,936 tfaip.base.trainer.callbacks.l: Start of epoch   11
+INFO     2021-02-08 11:23:20,944 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 11:23:20,951 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪оказалась на территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 11:23:20,959 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 11:23:20,968 tfaip.base.scenario.util.print: 
+  CER:  0.3829787234042553
+  PRED: '‪жности преидента греиусмотатес Пиеяабеаежи‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 11:23:20,975 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 11:23:20,984 tfaip.base.scenario.util.print: 
+  CER:  0.2727272727272727
+  PRED: '‪Молитвы и скены проведкнио нскоторых пахаке‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 11:23:20,992 tfaip.base.scenario.util.print: 
+  CER:  0.020833333333333332
+  PRED: '‪этот пост был избран бен Зыскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 11:23:21,004 tfaip.base.scenario.util.print: 
+  CER:  0.3389830508474576
+  PRED: '‪Сахар втламывели сперяальными куранкаих, бмл си ии‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 11:23:21,013 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 11:23:21,037 tfaip.base.scenario.util.print: 
+  CER:  0.06521739130434782
+  PRED: '‪магнат Шепдон Адельсон, 77етний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 11:23:21,050 tfaip.base.scenario.util.print: 
+  CER:  0.14634146341463414
+  PRED: '‪меканизма скребутся какие-то части, что привело пвлениню металическикоили в‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 11:23:22,722 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:09:32 | EPOCH 00:52.01 | TRAIN 00:50.09 | TEST 00:01.92 | BATCH 0.024s
+INFO     2021-02-08 11:23:22,722 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 00:51.79 | TRAIN 00:49.93 | TEST 00:01.85 | BATCH 0.024s
+INFO     2021-02-08 11:23:22,723 tfaip.base.trainer.callbacks.e: Better value of val_CER found. Old = 0.08186658471822739, Best = 0.0795072540640831
+INFO     2021-02-08 11:23:22,756 tfaip.base.trainer.callbacks.l: Results of epoch   11: CER: 0.0804 - ctc_loss: 16.1963 - loss: 16.1963 - val_CER: 0.0795 - val_ctc_loss: 18.4136 - val_loss: 18.4136
+INFO     2021-02-08 11:23:22,758 tfaip.base.trainer.callbacks.l: Start of epoch   12
+INFO     2021-02-08 11:24:12,886 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 11:24:12,893 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪оказалась на территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 11:24:12,900 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 11:24:12,909 tfaip.base.scenario.util.print: 
+  CER:  0.40425531914893614
+  PRED: '‪жноси премдента рсдусмотазт Писабваожи‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 11:24:12,916 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 11:24:12,924 tfaip.base.scenario.util.print: 
+  CER:  0.2727272727272727
+  PRED: '‪Молитвы и скены провсдкния мекототых похдке‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 11:24:12,932 tfaip.base.scenario.util.print: 
+  CER:  0.020833333333333332
+  PRED: '‪этот пост был избран бен Зыскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 11:24:12,946 tfaip.base.scenario.util.print: 
+  CER:  0.3559322033898305
+  PRED: '‪Сахар втламывели слеряальными корниаих, о л срои и ии‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 11:24:12,955 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 11:24:12,973 tfaip.base.scenario.util.print: 
+  CER:  0.08695652173913043
+  PRED: '‪магнат елдон Адельсон, И7етний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 11:24:12,987 tfaip.base.scenario.util.print: 
+  CER:  0.12195121951219512
+  PRED: '‪меканизма скребутся какие-то части, что привело попвлениню металичскик оилои в‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 11:24:14,626 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:10:24 | EPOCH 00:52.00 | TRAIN 00:50.09 | TEST 00:01.92 | BATCH 0.024s
+INFO     2021-02-08 11:24:14,626 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 00:51.87 | TRAIN 00:50.05 | TEST 00:01.82 | BATCH 0.024s
+INFO     2021-02-08 11:24:14,626 tfaip.base.trainer.callbacks.e: No better value of val_CER = 0.07982043921947479 found. Keeping best = 0.0795072540640831
+INFO     2021-02-08 11:24:14,628 tfaip.base.trainer.callbacks.l: Results of epoch   12: CER: 0.0778 - ctc_loss: 15.6578 - loss: 15.6578 - val_CER: 0.0798 - val_ctc_loss: 17.7106 - val_loss: 17.7106
+INFO     2021-02-08 11:24:14,630 tfaip.base.trainer.callbacks.l: Start of epoch   13
+INFO     2021-02-08 11:25:04,621 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 11:25:04,628 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪оказалась на территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 11:25:04,636 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 11:25:04,645 tfaip.base.scenario.util.print: 
+  CER:  0.40425531914893614
+  PRED: '‪оижности преидента грелусмоназт Пиезабвлеяни‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 11:25:04,652 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 11:25:04,661 tfaip.base.scenario.util.print: 
+  CER:  0.3409090909090909
+  PRED: '‪Молвитвы и скены проведкнмо некаторык пахаке‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 11:25:04,669 tfaip.base.scenario.util.print: 
+  CER:  0.020833333333333332
+  PRED: '‪этот пост был избран бен Зыскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 11:25:04,682 tfaip.base.scenario.util.print: 
+  CER:  0.3050847457627119
+  PRED: '‪Сахар отпамовели сперяальными косанкаих, ла бмл сри и и‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 11:25:04,691 tfaip.base.scenario.util.print: 
+  CER:  0.018518518518518517
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Каоказу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 11:25:04,713 tfaip.base.scenario.util.print: 
+  CER:  0.043478260869565216
+  PRED: '‪магнат Шелдон Адельсон, Т7летний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 11:25:04,726 tfaip.base.scenario.util.print: 
+  CER:  0.13414634146341464
+  PRED: '‪меканизма скребутся какие-то части, что привело пвлениню металическикоилоя в‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 11:25:06,324 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:11:16 | EPOCH 00:51.98 | TRAIN 00:50.07 | TEST 00:01.91 | BATCH 0.024s
+INFO     2021-02-08 11:25:06,324 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 00:51.69 | TRAIN 00:49.92 | TEST 00:01.78 | BATCH 0.024s
+INFO     2021-02-08 11:25:06,324 tfaip.base.trainer.callbacks.e: Better value of val_CER found. Old = 0.0795072540640831, Best = 0.07773254066705704
+INFO     2021-02-08 11:25:06,358 tfaip.base.trainer.callbacks.l: Results of epoch   13: CER: 0.0762 - ctc_loss: 15.1626 - loss: 15.1626 - val_CER: 0.0777 - val_ctc_loss: 18.6346 - val_loss: 18.6346
+INFO     2021-02-08 11:25:06,360 tfaip.base.trainer.callbacks.l: Start of epoch   14
+INFO     2021-02-08 11:25:56,138 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 11:25:56,145 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪оказалась на территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 11:25:56,153 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 11:25:56,162 tfaip.base.scenario.util.print: 
+  CER:  0.40425531914893614
+  PRED: '‪вяносуи президента грсдусмонанте Пизабвнеяи‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 11:25:56,170 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 11:25:56,178 tfaip.base.scenario.util.print: 
+  CER:  0.22727272727272727
+  PRED: '‪Молитвы и скены проведкнио некоторых почхдке‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 11:25:56,186 tfaip.base.scenario.util.print: 
+  CER:  0.041666666666666664
+  PRED: '‪этот пост был избран вен Зыскови, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 11:25:56,199 tfaip.base.scenario.util.print: 
+  CER:  0.3559322033898305
+  PRED: '‪Сахар втламовели слеряальными коранкаих, о ол стот ии‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 11:25:56,208 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 11:25:56,230 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 11:25:56,244 tfaip.base.scenario.util.print: 
+  CER:  0.12195121951219512
+  PRED: '‪меканизма скребутся какие-то части, что привел повлениню металическик оилои в‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 11:25:57,870 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:12:07 | EPOCH 00:51.94 | TRAIN 00:50.05 | TEST 00:01.90 | BATCH 0.024s
+INFO     2021-02-08 11:25:57,870 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 00:51.51 | TRAIN 00:49.70 | TEST 00:01.81 | BATCH 0.024s
+INFO     2021-02-08 11:25:57,871 tfaip.base.trainer.callbacks.e: Better value of val_CER found. Old = 0.07773254066705704, Best = 0.0768556222319603
+INFO     2021-02-08 11:25:57,905 tfaip.base.trainer.callbacks.l: Results of epoch   14: CER: 0.0737 - ctc_loss: 14.6993 - loss: 14.6993 - val_CER: 0.0769 - val_ctc_loss: 17.6038 - val_loss: 17.6038
+INFO     2021-02-08 11:25:57,907 tfaip.base.trainer.callbacks.l: Start of epoch   15
+INFO     2021-02-08 11:26:47,822 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 11:26:47,828 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪оказалась на территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 11:26:47,835 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 11:26:47,844 tfaip.base.scenario.util.print: 
+  CER:  0.425531914893617
+  PRED: '‪ежносии преидента грсиусмотазт Пиехабееги‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 11:26:47,851 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 11:26:47,859 tfaip.base.scenario.util.print: 
+  CER:  0.25
+  PRED: '‪Молтвы и скемы проведкнмо некоторых пхдке‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 11:26:47,867 tfaip.base.scenario.util.print: 
+  CER:  0.020833333333333332
+  PRED: '‪этот пост был избран бен Зыскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 11:26:47,880 tfaip.base.scenario.util.print: 
+  CER:  0.3050847457627119
+  PRED: '‪Сахар отламывели слереальными кранкаих, ла бол сриг ио‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 11:26:47,889 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 11:26:47,909 tfaip.base.scenario.util.print: 
+  CER:  0.043478260869565216
+  PRED: '‪магнат Шелдон Адельсон, Т7летний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 11:26:47,922 tfaip.base.scenario.util.print: 
+  CER:  0.12195121951219512
+  PRED: '‪меканизма скребутся какие-то части, что привело повлениню металоичскик оило в‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 11:26:49,578 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:12:59 | EPOCH 00:51.93 | TRAIN 00:50.03 | TEST 00:01.89 | BATCH 0.024s
+INFO     2021-02-08 11:26:49,578 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 00:51.67 | TRAIN 00:49.84 | TEST 00:01.83 | BATCH 0.024s
+INFO     2021-02-08 11:26:49,578 tfaip.base.trainer.callbacks.e: Early stopping progressed. (remaining iteration without improvement: 9)
+INFO     2021-02-08 11:26:49,578 tfaip.base.trainer.callbacks.e: No better value of val_CER = 0.07693913578987122 found. Keeping best = 0.0768556222319603
+INFO     2021-02-08 11:26:49,580 tfaip.base.trainer.callbacks.l: Results of epoch   15: CER: 0.0723 - ctc_loss: 14.2524 - loss: 14.2524 - val_CER: 0.0769 - val_ctc_loss: 18.5930 - val_loss: 18.5930
+INFO     2021-02-08 11:26:49,582 tfaip.base.trainer.callbacks.l: Start of epoch   16
+INFO     2021-02-08 11:27:39,455 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 11:27:39,463 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪оказалась на территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 11:27:39,470 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 11:27:39,479 tfaip.base.scenario.util.print: 
+  CER:  0.3829787234042553
+  PRED: '‪ртжности прсидента гусдусмотазте Писабвножи‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 11:27:39,486 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 11:27:39,494 tfaip.base.scenario.util.print: 
+  CER:  0.25
+  PRED: '‪Молитвы и скены провсдкнио некоторых пачхдке‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 11:27:39,502 tfaip.base.scenario.util.print: 
+  CER:  0.020833333333333332
+  PRED: '‪этот пост был избран бен Зыскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 11:27:39,514 tfaip.base.scenario.util.print: 
+  CER:  0.3389830508474576
+  PRED: '‪Сакар втамовели спервальными коранкаик, о бол стиг и и‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 11:27:39,524 tfaip.base.scenario.util.print: 
+  CER:  0.018518518518518517
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавкхазу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 11:27:39,545 tfaip.base.scenario.util.print: 
+  CER:  0.06521739130434782
+  PRED: '‪магиат Шелдон Адельсон, И7 летний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 11:27:39,559 tfaip.base.scenario.util.print: 
+  CER:  0.14634146341463414
+  PRED: '‪меканизма скребутся какие-то части, что привело повленикю металичскикомлои в‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 11:27:41,188 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:13:50 | EPOCH 00:51.91 | TRAIN 00:50.02 | TEST 00:01.89 | BATCH 0.024s
+INFO     2021-02-08 11:27:41,188 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 00:51.61 | TRAIN 00:49.79 | TEST 00:01.81 | BATCH 0.024s
+INFO     2021-02-08 11:27:41,188 tfaip.base.trainer.callbacks.e: No better value of val_CER = 0.07698089629411697 found. Keeping best = 0.0768556222319603
+INFO     2021-02-08 11:27:41,190 tfaip.base.trainer.callbacks.l: Results of epoch   16: CER: 0.0712 - ctc_loss: 13.8744 - loss: 13.8744 - val_CER: 0.0770 - val_ctc_loss: 18.9255 - val_loss: 18.9255
+INFO     2021-02-08 11:27:41,192 tfaip.base.trainer.callbacks.l: Start of epoch   17
+INFO     2021-02-08 11:28:31,000 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 11:28:31,008 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪оказалась на территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 11:28:31,016 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 11:28:31,025 tfaip.base.scenario.util.print: 
+  CER:  0.40425531914893614
+  PRED: '‪ожносии преидента рсдусмонате Писабеаояни‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 11:28:31,032 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 11:28:31,040 tfaip.base.scenario.util.print: 
+  CER:  0.29545454545454547
+  PRED: '‪Молитвы и скены провсукнио некотоных очхаке‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 11:28:31,047 tfaip.base.scenario.util.print: 
+  CER:  0.020833333333333332
+  PRED: '‪этот пост был избран бен Зыскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 11:28:31,059 tfaip.base.scenario.util.print: 
+  CER:  0.4067796610169492
+  PRED: '‪Сахар отламывели сперяальныи корнкаи, и и ии‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 11:28:31,067 tfaip.base.scenario.util.print: 
+  CER:  0.018518518518518517
+  PRED: '‪бодрый духом, совершил я пешее путешествше по Кавказу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 11:28:31,095 tfaip.base.scenario.util.print: 
+  CER:  0.021739130434782608
+  PRED: '‪магнат Шелдон Адельсон, 77летний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 11:28:31,108 tfaip.base.scenario.util.print: 
+  CER:  0.15853658536585366
+  PRED: '‪меканизма сктребутся какне-то части, что привело повлениню металичскик олол в‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 11:28:32,735 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:14:42 | EPOCH 00:51.89 | TRAIN 00:50.00 | TEST 00:01.88 | BATCH 0.024s
+INFO     2021-02-08 11:28:32,735 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 00:51.54 | TRAIN 00:49.73 | TEST 00:01.81 | BATCH 0.024s
+INFO     2021-02-08 11:28:32,735 tfaip.base.trainer.callbacks.e: No better value of val_CER = 0.0782753974199295 found. Keeping best = 0.0768556222319603
+INFO     2021-02-08 11:28:32,737 tfaip.base.trainer.callbacks.l: Results of epoch   17: CER: 0.0697 - ctc_loss: 13.5811 - loss: 13.5811 - val_CER: 0.0783 - val_ctc_loss: 17.4852 - val_loss: 17.4852
+INFO     2021-02-08 11:28:32,739 tfaip.base.trainer.callbacks.l: Start of epoch   18
+INFO     2021-02-08 11:29:22,656 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 11:29:22,664 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪оказалась на территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 11:29:22,671 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 11:29:22,680 tfaip.base.scenario.util.print: 
+  CER:  0.3404255319148936
+  PRED: '‪ожности преидента гредусмоназто Пееабвнеяи‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 11:29:22,688 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 11:29:22,696 tfaip.base.scenario.util.print: 
+  CER:  0.25
+  PRED: '‪Молитвы и скены провсдкнио некоторык окдке‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 11:29:22,704 tfaip.base.scenario.util.print: 
+  CER:  0.041666666666666664
+  PRED: '‪этот пост быил избран бен Зыскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 11:29:22,716 tfaip.base.scenario.util.print: 
+  CER:  0.3898305084745763
+  PRED: '‪Сахар отпамывели сперяальными корнкаи, во и и и‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 11:29:22,724 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 11:29:22,747 tfaip.base.scenario.util.print: 
+  CER:  0.06521739130434782
+  PRED: '‪магнат елдон Адельсон, Т7 летний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 11:29:22,759 tfaip.base.scenario.util.print: 
+  CER:  0.12195121951219512
+  PRED: '‪меканизма скребутся какие-то части, что привело повлениню металическик оили в‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 11:29:24,347 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:15:34 | EPOCH 00:51.87 | TRAIN 00:49.99 | TEST 00:01.88 | BATCH 0.024s
+INFO     2021-02-08 11:29:24,347 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 00:51.61 | TRAIN 00:49.84 | TEST 00:01.77 | BATCH 0.024s
+INFO     2021-02-08 11:29:24,347 tfaip.base.trainer.callbacks.e: No better value of val_CER = 0.07773254066705704 found. Keeping best = 0.0768556222319603
+INFO     2021-02-08 11:29:24,349 tfaip.base.trainer.callbacks.l: Results of epoch   18: CER: 0.0688 - ctc_loss: 13.1896 - loss: 13.1896 - val_CER: 0.0777 - val_ctc_loss: 18.3420 - val_loss: 18.3420
+INFO     2021-02-08 11:29:24,350 tfaip.base.trainer.callbacks.l: Start of epoch   19
+INFO     2021-02-08 11:30:14,444 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 11:30:14,451 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪оказалась на территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 11:30:14,458 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 11:30:14,468 tfaip.base.scenario.util.print: 
+  CER:  0.3617021276595745
+  PRED: '‪о яности президента срсдусмоназт Писхабвнежци‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 11:30:14,475 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 11:30:14,482 tfaip.base.scenario.util.print: 
+  CER:  0.25
+  PRED: '‪Молтвы и скемы провсдкнио некоторых оааке‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 11:30:14,490 tfaip.base.scenario.util.print: 
+  CER:  0.020833333333333332
+  PRED: '‪этот пост был избран вен Зыскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 11:30:14,502 tfaip.base.scenario.util.print: 
+  CER:  0.3220338983050847
+  PRED: '‪Сахар втламывали сперяальными коранкамх, о л и и и и‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 11:30:14,511 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 11:30:14,533 tfaip.base.scenario.util.print: 
+  CER:  0.043478260869565216
+  PRED: '‪магнат елдон Адельсон, 77 летний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 11:30:14,546 tfaip.base.scenario.util.print: 
+  CER:  0.14634146341463414
+  PRED: '‪меканизма скребутся какие то части, что привело попвлениню металичскик омлоя в‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 11:30:16,158 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:16:25 | EPOCH 00:51.87 | TRAIN 00:49.99 | TEST 00:01.87 | BATCH 0.024s
+INFO     2021-02-08 11:30:16,158 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 00:51.81 | TRAIN 00:50.01 | TEST 00:01.79 | BATCH 0.024s
+INFO     2021-02-08 11:30:16,158 tfaip.base.trainer.callbacks.e: Better value of val_CER found. Old = 0.0768556222319603, Best = 0.07422486692667007
+INFO     2021-02-08 11:30:16,192 tfaip.base.trainer.callbacks.l: Results of epoch   19: CER: 0.0676 - ctc_loss: 12.8805 - loss: 12.8805 - val_CER: 0.0742 - val_ctc_loss: 17.9856 - val_loss: 17.9856
+INFO     2021-02-08 11:30:16,194 tfaip.base.trainer.callbacks.l: Start of epoch   20
+INFO     2021-02-08 11:31:06,408 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 11:31:06,415 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪оказалась на территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 11:31:06,423 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 11:31:06,432 tfaip.base.scenario.util.print: 
+  CER:  0.3404255319148936
+  PRED: '‪ожнодти преоидента трсдусмонато Лихабвножи‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 11:31:06,439 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 11:31:06,447 tfaip.base.scenario.util.print: 
+  CER:  0.25
+  PRED: '‪Молитвы и скены провсакния нскоторых оаркаке‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 11:31:06,455 tfaip.base.scenario.util.print: 
+  CER:  0.020833333333333332
+  PRED: '‪этот пост был избран бен Зыскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 11:31:06,469 tfaip.base.scenario.util.print: 
+  CER:  0.3559322033898305
+  PRED: '‪Сахар отламывали сперянльныоми коранкаих, о бо от ит и‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 11:31:06,477 tfaip.base.scenario.util.print: 
+  CER:  0.037037037037037035
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Каоктазу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 11:31:06,500 tfaip.base.scenario.util.print: 
+  CER:  0.043478260869565216
+  PRED: '‪магнат 1елдон Адельсон, 77 летний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 11:31:06,513 tfaip.base.scenario.util.print: 
+  CER:  0.13414634146341464
+  PRED: '‪меканизма скребутся какие-то части, что привело к повленикю металичскик оили‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 11:31:08,104 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:17:17 | EPOCH 00:51.87 | TRAIN 00:49.00 | TEST 00:01.87 | BATCH 0.024s
+INFO     2021-02-08 11:31:08,104 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 00:51.91 | TRAIN 00:50.13 | TEST 00:01.78 | BATCH 0.024s
+INFO     2021-02-08 11:31:08,104 tfaip.base.trainer.callbacks.e: Early stopping progressed. (remaining iteration without improvement: 9)
+INFO     2021-02-08 11:31:08,104 tfaip.base.trainer.callbacks.e: No better value of val_CER = 0.07812923938035965 found. Keeping best = 0.07422486692667007
+INFO     2021-02-08 11:31:08,106 tfaip.base.trainer.callbacks.l: Results of epoch   20: CER: 0.0666 - ctc_loss: 12.6860 - loss: 12.6860 - val_CER: 0.0781 - val_ctc_loss: 17.9264 - val_loss: 17.9264
+INFO     2021-02-08 11:31:08,108 tfaip.base.trainer.callbacks.l: Start of epoch   21
+INFO     2021-02-08 11:31:57,910 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 11:31:57,917 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪оказалась на территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 11:31:57,924 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 11:31:57,933 tfaip.base.scenario.util.print: 
+  CER:  0.3617021276595745
+  PRED: '‪ржности преидента прсдусмотамто Пезабвожи‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 11:31:57,940 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 11:31:57,947 tfaip.base.scenario.util.print: 
+  CER:  0.3181818181818182
+  PRED: '‪Молитвы и скемы провсдкнмо некотончых пааке‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 11:31:57,955 tfaip.base.scenario.util.print: 
+  CER:  0.020833333333333332
+  PRED: '‪этот пост был избран бен Зыскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 11:31:57,969 tfaip.base.scenario.util.print: 
+  CER:  0.4067796610169492
+  PRED: '‪Санар отлоамыволи слериальныоми коранкои, о о и и и‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 11:31:57,977 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 11:31:58,000 tfaip.base.scenario.util.print: 
+  CER:  0.08695652173913043
+  PRED: '‪магнат елдон Адельсон, Т7 етний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 11:31:58,013 tfaip.base.scenario.util.print: 
+  CER:  0.13414634146341464
+  PRED: '‪меанизма скребутся какие-то части, что привело к пвленикю металичнскик омли в‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 11:31:59,625 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:18:09 | EPOCH 00:51.85 | TRAIN 00:49.99 | TEST 00:01.87 | BATCH 0.024s
+INFO     2021-02-08 11:31:59,625 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 00:51.52 | TRAIN 00:49.72 | TEST 00:01.79 | BATCH 0.024s
+INFO     2021-02-08 11:31:59,625 tfaip.base.trainer.callbacks.e: No better value of val_CER = 0.08096878230571747 found. Keeping best = 0.07422486692667007
+INFO     2021-02-08 11:31:59,627 tfaip.base.trainer.callbacks.l: Results of epoch   21: CER: 0.0661 - ctc_loss: 12.4314 - loss: 12.4314 - val_CER: 0.0810 - val_ctc_loss: 18.2145 - val_loss: 18.2145
+INFO     2021-02-08 11:31:59,628 tfaip.base.trainer.callbacks.l: Start of epoch   22
+INFO     2021-02-08 11:32:49,676 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 11:32:49,683 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪оказалась на территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 11:32:49,691 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 11:32:49,700 tfaip.base.scenario.util.print: 
+  CER:  0.3191489361702128
+  PRED: '‪рлжности прозидента грсдусмоназто Пихабвножим‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 11:32:49,707 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 11:32:49,715 tfaip.base.scenario.util.print: 
+  CER:  0.25
+  PRED: '‪Молитвы и скены провсукнио нскоторых оарндке‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 11:32:49,723 tfaip.base.scenario.util.print: 
+  CER:  0.020833333333333332
+  PRED: '‪этот пост был избран бен Зыскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 11:32:49,735 tfaip.base.scenario.util.print: 
+  CER:  0.4406779661016949
+  PRED: '‪валар отлоамывали соеряальныи корнаи, о о о и и и‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 11:32:49,744 tfaip.base.scenario.util.print: 
+  CER:  0.018518518518518517
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавктазу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 11:32:49,766 tfaip.base.scenario.util.print: 
+  CER:  0.043478260869565216
+  PRED: '‪магнат Шелдон Адельсон, Т7 летний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 11:32:49,778 tfaip.base.scenario.util.print: 
+  CER:  0.14634146341463414
+  PRED: '‪меанизма скребутся какие-то части, что привело попвлениню металическ оли в‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 11:32:51,411 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:19:01 | EPOCH 00:51.85 | TRAIN 00:49.99 | TEST 00:01.86 | BATCH 0.024s
+INFO     2021-02-08 11:32:51,411 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 00:51.78 | TRAIN 00:49.97 | TEST 00:01.81 | BATCH 0.024s
+INFO     2021-02-08 11:32:51,411 tfaip.base.trainer.callbacks.e: No better value of val_CER = 0.0768556222319603 found. Keeping best = 0.07422486692667007
+INFO     2021-02-08 11:32:51,413 tfaip.base.trainer.callbacks.l: Results of epoch   22: CER: 0.0647 - ctc_loss: 12.1203 - loss: 12.1203 - val_CER: 0.0769 - val_ctc_loss: 18.0163 - val_loss: 18.0163
+INFO     2021-02-08 11:32:51,414 tfaip.base.trainer.callbacks.l: Start of epoch   23
+INFO     2021-02-08 11:33:41,633 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 11:33:41,640 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪оказалась на территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 11:33:41,647 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 11:33:41,656 tfaip.base.scenario.util.print: 
+  CER:  0.3829787234042553
+  PRED: '‪оижносити прсзидента трсиусмонамто Псхабвножи‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 11:33:41,663 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 11:33:41,671 tfaip.base.scenario.util.print: 
+  CER:  0.25
+  PRED: '‪Молитвы и скены провсукнио некоторых пархдке‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 11:33:41,679 tfaip.base.scenario.util.print: 
+  CER:  0.020833333333333332
+  PRED: '‪этот пост был избран вен Зыскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 11:33:41,692 tfaip.base.scenario.util.print: 
+  CER:  0.3728813559322034
+  PRED: '‪Сахар отпамывали слеряальными коеанкамх, и иг и ио о‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 11:33:41,701 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 11:33:41,723 tfaip.base.scenario.util.print: 
+  CER:  0.043478260869565216
+  PRED: '‪магнат елдон Адельсон, Т7-летний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 11:33:41,736 tfaip.base.scenario.util.print: 
+  CER:  0.13414634146341464
+  PRED: '‪меканизма скребутся какие-то части, что привело повленикю металичнскик олои в‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 11:33:43,333 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:19:53 | EPOCH 00:51.85 | TRAIN 00:49.99 | TEST 00:01.86 | BATCH 0.024s
+INFO     2021-02-08 11:33:43,333 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 00:51.92 | TRAIN 00:50.14 | TEST 00:01.78 | BATCH 0.024s
+INFO     2021-02-08 11:33:43,333 tfaip.base.trainer.callbacks.e: No better value of val_CER = 0.07867209613323212 found. Keeping best = 0.07422486692667007
+INFO     2021-02-08 11:33:43,335 tfaip.base.trainer.callbacks.l: Results of epoch   23: CER: 0.0643 - ctc_loss: 11.9239 - loss: 11.9239 - val_CER: 0.0787 - val_ctc_loss: 18.2637 - val_loss: 18.2637
+INFO     2021-02-08 11:33:43,336 tfaip.base.trainer.callbacks.l: Start of epoch   24
+INFO     2021-02-08 11:34:33,214 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 11:34:33,221 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪оказалась на территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 11:34:33,228 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 11:34:33,237 tfaip.base.scenario.util.print: 
+  CER:  0.40425531914893614
+  PRED: '‪рижности проидента трсдусмонизте Писхабвожти‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 11:34:33,244 tfaip.base.scenario.util.print: 
+  CER:  0.022727272727272728
+  PRED: '‪напротив, традиционно крайне лояльны к нему:.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 11:34:33,252 tfaip.base.scenario.util.print: 
+  CER:  0.25
+  PRED: '‪Молитвы и скены провсдкнио некоторых очхаке‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 11:34:33,260 tfaip.base.scenario.util.print: 
+  CER:  0.020833333333333332
+  PRED: '‪этот пост был избран бен Зыскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 11:34:33,273 tfaip.base.scenario.util.print: 
+  CER:  0.4915254237288136
+  PRED: '‪Салар оталмывели спереальньыи рнкнвк, о о по и и и‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 11:34:33,282 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 11:34:33,304 tfaip.base.scenario.util.print: 
+  CER:  0.043478260869565216
+  PRED: '‪магнат Шелдон Адельсон, Т7 летний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 11:34:33,317 tfaip.base.scenario.util.print: 
+  CER:  0.13414634146341464
+  PRED: '‪меканизма скребутся какне-то части, что привело кповлениню металическик ои в‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 11:34:34,942 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:20:44 | EPOCH 00:51.84 | TRAIN 00:49.98 | TEST 00:01.86 | BATCH 0.024s
+INFO     2021-02-08 11:34:34,942 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 00:51.61 | TRAIN 00:49.80 | TEST 00:01.81 | BATCH 0.024s
+INFO     2021-02-08 11:34:34,942 tfaip.base.trainer.callbacks.e: No better value of val_CER = 0.08055120706558228 found. Keeping best = 0.07422486692667007
+INFO     2021-02-08 11:34:34,944 tfaip.base.trainer.callbacks.l: Results of epoch   24: CER: 0.0637 - ctc_loss: 11.6661 - loss: 11.6661 - val_CER: 0.0806 - val_ctc_loss: 17.8345 - val_loss: 17.8345
+INFO     2021-02-08 11:34:34,946 tfaip.base.trainer.callbacks.l: Start of epoch   25
+INFO     2021-02-08 11:35:25,050 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 11:35:25,057 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪оказалась на территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 11:35:25,065 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 11:35:25,074 tfaip.base.scenario.util.print: 
+  CER:  0.3404255319148936
+  PRED: '‪оижности прооидента трсдусмонато Писабвножи‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 11:35:25,082 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 11:35:25,089 tfaip.base.scenario.util.print: 
+  CER:  0.25
+  PRED: '‪Малитвы и скены проведкния нскоторых праке‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 11:35:25,097 tfaip.base.scenario.util.print: 
+  CER:  0.041666666666666664
+  PRED: '‪этот пост быил избран бен Зыскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 11:35:25,293 tfaip.base.scenario.util.print: 
+  CER:  0.3559322033898305
+  PRED: '‪Сахар отламывали сперяольныи кртнкамх, о ои сит и и и‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 11:35:25,302 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 11:35:25,329 tfaip.base.scenario.util.print: 
+  CER:  0.021739130434782608
+  PRED: '‪магнат Шелдон Адельсон, 77 летний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 11:35:25,342 tfaip.base.scenario.util.print: 
+  CER:  0.0975609756097561
+  PRED: '‪меканизма скребутся какие-то части, что привело кповлению металичскик оилои в‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 11:35:26,927 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:21:36 | EPOCH 00:51.85 | TRAIN 00:49.99 | TEST 00:01.86 | BATCH 0.024s
+INFO     2021-02-08 11:35:26,927 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 00:51.98 | TRAIN 00:50.03 | TEST 00:01.96 | BATCH 0.024s
+INFO     2021-02-08 11:35:26,927 tfaip.base.trainer.callbacks.e: Early stopping progressed. (remaining iteration without improvement: 8)
+INFO     2021-02-08 11:35:26,927 tfaip.base.trainer.callbacks.e: No better value of val_CER = 0.07733584195375443 found. Keeping best = 0.07422486692667007
+INFO     2021-02-08 11:35:26,929 tfaip.base.trainer.callbacks.l: Results of epoch   25: CER: 0.0622 - ctc_loss: 11.4777 - loss: 11.4777 - val_CER: 0.0773 - val_ctc_loss: 18.1177 - val_loss: 18.1177
+INFO     2021-02-08 11:35:26,931 tfaip.base.trainer.callbacks.l: Start of epoch   26
+INFO     2021-02-08 11:36:16,851 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 11:36:16,858 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪оказалась на территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 11:36:16,866 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 11:36:16,874 tfaip.base.scenario.util.print: 
+  CER:  0.3617021276595745
+  PRED: '‪елжности прсэидента гсдусмонато Лисабвожи‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 11:36:16,881 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 11:36:16,889 tfaip.base.scenario.util.print: 
+  CER:  0.25
+  PRED: '‪Молитвы и скены проведкнмо нскоторых оокдке‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 11:36:16,897 tfaip.base.scenario.util.print: 
+  CER:  0.020833333333333332
+  PRED: '‪этот пост был избран бен Зыскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 11:36:16,909 tfaip.base.scenario.util.print: 
+  CER:  0.3898305084745763
+  PRED: '‪Сакар отпамывели сперяальныи корнками, о ои иоти и и‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 11:36:16,917 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 11:36:16,941 tfaip.base.scenario.util.print: 
+  CER:  0.021739130434782608
+  PRED: '‪магнат Шелдон Адельсон, 77 летний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 11:36:16,954 tfaip.base.scenario.util.print: 
+  CER:  0.13414634146341464
+  PRED: '‪меанизма скребутся какие-то части, что привело повлениню металичнскик оло в‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 11:36:18,530 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:22:28 | EPOCH 00:51.84 | TRAIN 00:49.98 | TEST 00:01.86 | BATCH 0.024s
+INFO     2021-02-08 11:36:18,530 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 00:51.60 | TRAIN 00:49.84 | TEST 00:01.76 | BATCH 0.024s
+INFO     2021-02-08 11:36:18,531 tfaip.base.trainer.callbacks.e: No better value of val_CER = 0.07902704179286957 found. Keeping best = 0.07422486692667007
+INFO     2021-02-08 11:36:18,532 tfaip.base.trainer.callbacks.l: Results of epoch   26: CER: 0.0619 - ctc_loss: 11.2858 - loss: 11.2858 - val_CER: 0.0790 - val_ctc_loss: 18.1815 - val_loss: 18.1815
+INFO     2021-02-08 11:36:18,534 tfaip.base.trainer.callbacks.l: Start of epoch   27
+INFO     2021-02-08 11:37:08,482 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 11:37:08,489 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪оказалась на территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 11:37:08,497 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 11:37:08,506 tfaip.base.scenario.util.print: 
+  CER:  0.3617021276595745
+  PRED: '‪олжностии проидента пиедусмоназть Лиехабеояи‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 11:37:08,514 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 11:37:08,522 tfaip.base.scenario.util.print: 
+  CER:  0.2727272727272727
+  PRED: '‪Молитвы и скены проведкнио нскпторых онаке‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 11:37:08,530 tfaip.base.scenario.util.print: 
+  CER:  0.020833333333333332
+  PRED: '‪этот пост был избран бен Зыскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 11:37:08,543 tfaip.base.scenario.util.print: 
+  CER:  0.3898305084745763
+  PRED: '‪Салар отпамывели сперяальнымыи кренками, о т и и‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 11:37:08,552 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 11:37:08,578 tfaip.base.scenario.util.print: 
+  CER:  0.06521739130434782
+  PRED: '‪магнат елдон Адельсон, Т7 летний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 11:37:08,591 tfaip.base.scenario.util.print: 
+  CER:  0.14634146341463414
+  PRED: '‪меанизма скребутся какие-то части, что привело повлениню металоичскик поло в в‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 11:37:10,228 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:23:20 | EPOCH 00:51.83 | TRAIN 00:49.98 | TEST 00:01.86 | BATCH 0.024s
+INFO     2021-02-08 11:37:10,228 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 00:51.69 | TRAIN 00:49.87 | TEST 00:01.82 | BATCH 0.024s
+INFO     2021-02-08 11:37:10,229 tfaip.base.trainer.callbacks.e: No better value of val_CER = 0.0784841850399971 found. Keeping best = 0.07422486692667007
+INFO     2021-02-08 11:37:10,230 tfaip.base.trainer.callbacks.l: Results of epoch   27: CER: 0.0614 - ctc_loss: 11.1589 - loss: 11.1589 - val_CER: 0.0785 - val_ctc_loss: 18.9098 - val_loss: 18.9098
+INFO     2021-02-08 11:37:10,232 tfaip.base.trainer.callbacks.l: Start of epoch   28
+INFO     2021-02-08 11:37:59,954 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 11:37:59,962 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪оказалась на территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 11:37:59,970 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 11:37:59,978 tfaip.base.scenario.util.print: 
+  CER:  0.3617021276595745
+  PRED: '‪олжности прсидента псдусмонат Писабвкожи‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 11:37:59,985 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 11:37:59,993 tfaip.base.scenario.util.print: 
+  CER:  0.29545454545454547
+  PRED: '‪Молитвы и скены провсдкнио нскоторых похаке‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 11:38:00,001 tfaip.base.scenario.util.print: 
+  CER:  0.041666666666666664
+  PRED: '‪этот пост был избран вен Зьскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 11:38:00,014 tfaip.base.scenario.util.print: 
+  CER:  0.3220338983050847
+  PRED: '‪Сахар отамывали соеряольными кранками, о бо т и ии‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 11:38:00,023 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 11:38:00,043 tfaip.base.scenario.util.print: 
+  CER:  0.08695652173913043
+  PRED: '‪магнат елдон Адельсои, Т7 летний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 11:38:00,056 tfaip.base.scenario.util.print: 
+  CER:  0.14634146341463414
+  PRED: '‪меканизма скребутся какие-то части, что привело повленикю металичнскик или в‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 11:38:01,713 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:24:11 | EPOCH 00:51.82 | TRAIN 00:49.96 | TEST 00:01.86 | BATCH 0.024s
+INFO     2021-02-08 11:38:01,714 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 00:51.48 | TRAIN 00:49.64 | TEST 00:01.84 | BATCH 0.024s
+INFO     2021-02-08 11:38:01,714 tfaip.base.trainer.callbacks.e: No better value of val_CER = 0.07779517769813538 found. Keeping best = 0.07422486692667007
+INFO     2021-02-08 11:38:01,715 tfaip.base.trainer.callbacks.l: Results of epoch   28: CER: 0.0603 - ctc_loss: 10.9628 - loss: 10.9628 - val_CER: 0.0778 - val_ctc_loss: 18.1031 - val_loss: 18.1031
+INFO     2021-02-08 11:38:01,717 tfaip.base.trainer.callbacks.l: Start of epoch   29
+INFO     2021-02-08 11:38:51,819 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 11:38:51,827 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪оказалась на территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 11:38:51,835 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 11:38:51,843 tfaip.base.scenario.util.print: 
+  CER:  0.3617021276595745
+  PRED: '‪оаяности преидента треиусмонате Пивабеноки‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 11:38:51,851 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 11:38:51,859 tfaip.base.scenario.util.print: 
+  CER:  0.2727272727272727
+  PRED: '‪Волитвы и скены проведкнио нскотоных очхакв‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 11:38:51,867 tfaip.base.scenario.util.print: 
+  CER:  0.020833333333333332
+  PRED: '‪этот пост был избран бен Зыскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 11:38:51,880 tfaip.base.scenario.util.print: 
+  CER:  0.423728813559322
+  PRED: '‪Сахар отамывели соеряальньсыи кртнкаки, о ой иг и ии‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 11:38:51,889 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 11:38:51,909 tfaip.base.scenario.util.print: 
+  CER:  0.043478260869565216
+  PRED: '‪магнат 1елдон Адельсон, 77 летний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 11:38:51,922 tfaip.base.scenario.util.print: 
+  CER:  0.15853658536585366
+  PRED: '‪меканизма скребутся какие то части, что привело повленикю металичскик ол в‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 11:38:53,502 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:25:03 | EPOCH 00:51.82 | TRAIN 00:49.97 | TEST 00:01.85 | BATCH 0.024s
+INFO     2021-02-08 11:38:53,502 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 00:51.78 | TRAIN 00:50.02 | TEST 00:01.76 | BATCH 0.024s
+INFO     2021-02-08 11:38:53,503 tfaip.base.trainer.callbacks.e: No better value of val_CER = 0.07650067657232285 found. Keeping best = 0.07422486692667007
+INFO     2021-02-08 11:38:53,504 tfaip.base.trainer.callbacks.l: Results of epoch   29: CER: 0.0602 - ctc_loss: 10.8217 - loss: 10.8217 - val_CER: 0.0765 - val_ctc_loss: 18.6714 - val_loss: 18.6714
+INFO     2021-02-08 11:38:53,506 tfaip.base.trainer.callbacks.l: Start of epoch   30
+INFO     2021-02-08 11:39:43,775 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 11:39:43,782 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪оказалась на территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 11:39:43,789 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 11:39:43,799 tfaip.base.scenario.util.print: 
+  CER:  0.3404255319148936
+  PRED: '‪вр лпжности прооидента гредусмона;то Диесабвнокии‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 11:39:43,806 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 11:39:43,814 tfaip.base.scenario.util.print: 
+  CER:  0.2727272727272727
+  PRED: '‪Молитвоы и скемы провеукнмя нскотончых оачхдкв‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 11:39:43,822 tfaip.base.scenario.util.print: 
+  CER:  0.041666666666666664
+  PRED: '‪этот пост был избран вем Зыскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 11:39:43,833 tfaip.base.scenario.util.print: 
+  CER:  0.3728813559322034
+  PRED: '‪Сахар отпамывали сперольными крнками, о ои уи и‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 11:39:43,842 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 11:39:43,864 tfaip.base.scenario.util.print: 
+  CER:  0.08695652173913043
+  PRED: '‪магиат 1епдон Адельсон, 77 летний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 11:39:43,877 tfaip.base.scenario.util.print: 
+  CER:  0.13414634146341464
+  PRED: '‪меканизма скребутся какие-то части, что привело кповленикю металичскик оли в‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 11:39:45,459 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:25:55 | EPOCH 00:51.82 | TRAIN 00:49.97 | TEST 00:01.85 | BATCH 0.024s
+INFO     2021-02-08 11:39:45,459 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 00:51.95 | TRAIN 00:50.19 | TEST 00:01.76 | BATCH 0.024s
+INFO     2021-02-08 11:39:45,459 tfaip.base.trainer.callbacks.e: Early stopping progressed. (remaining iteration without improvement: 7)
+INFO     2021-02-08 11:39:45,459 tfaip.base.trainer.callbacks.e: No better value of val_CER = 0.07913143187761307 found. Keeping best = 0.07422486692667007
+INFO     2021-02-08 11:39:45,461 tfaip.base.trainer.callbacks.l: Results of epoch   30: CER: 0.0596 - ctc_loss: 10.6429 - loss: 10.6429 - val_CER: 0.0791 - val_ctc_loss: 18.8542 - val_loss: 18.8542
+INFO     2021-02-08 11:39:45,462 tfaip.base.trainer.callbacks.l: Start of epoch   31
+INFO     2021-02-08 11:40:35,548 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 11:40:35,554 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪оказалась на территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 11:40:35,562 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 11:40:35,570 tfaip.base.scenario.util.print: 
+  CER:  0.425531914893617
+  PRED: '‪оуяносуи проиденса писдусмоназт Пиесабеножи‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 11:40:35,577 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 11:40:35,585 tfaip.base.scenario.util.print: 
+  CER:  0.2727272727272727
+  PRED: '‪Молтвы и скены проведкнио нскоторчых овчхдке‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 11:40:35,593 tfaip.base.scenario.util.print: 
+  CER:  0.020833333333333332
+  PRED: '‪этот пост был избран вен Зыскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 11:40:35,606 tfaip.base.scenario.util.print: 
+  CER:  0.3559322033898305
+  PRED: '‪Салар отламовели сперяальными кранками, о ои и и и и‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 11:40:35,614 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 11:40:35,637 tfaip.base.scenario.util.print: 
+  CER:  0.06521739130434782
+  PRED: '‪магнат Шепдон Адельсон, Т7 летний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 11:40:35,649 tfaip.base.scenario.util.print: 
+  CER:  0.14634146341463414
+  PRED: '‪меканизма скребутся какие-то части, что привелокповленикю металичнскик онл в‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 11:40:37,240 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:26:47 | EPOCH 00:51.82 | TRAIN 00:49.97 | TEST 00:01.85 | BATCH 0.024s
+INFO     2021-02-08 11:40:37,240 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 00:51.78 | TRAIN 00:50.01 | TEST 00:01.77 | BATCH 0.024s
+INFO     2021-02-08 11:40:37,241 tfaip.base.trainer.callbacks.e: No better value of val_CER = 0.07750286906957626 found. Keeping best = 0.07422486692667007
+INFO     2021-02-08 11:40:37,242 tfaip.base.trainer.callbacks.l: Results of epoch   31: CER: 0.0590 - ctc_loss: 10.4982 - loss: 10.4982 - val_CER: 0.0775 - val_ctc_loss: 18.4820 - val_loss: 18.4820
+INFO     2021-02-08 11:40:37,244 tfaip.base.trainer.callbacks.l: Start of epoch   32
+INFO     2021-02-08 11:41:26,959 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 11:41:26,966 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪оказалась на территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 11:41:26,973 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 11:41:26,982 tfaip.base.scenario.util.print: 
+  CER:  0.44680851063829785
+  PRED: '‪оутяноети проэидена пиедусмоназто Пиовабьояни‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 11:41:26,989 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 11:41:26,997 tfaip.base.scenario.util.print: 
+  CER:  0.29545454545454547
+  PRED: '‪Малитвоы и скены проведкния нскоторчых овчаке‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 11:41:27,004 tfaip.base.scenario.util.print: 
+  CER:  0.020833333333333332
+  PRED: '‪этот пост был избран бен Зыскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 11:41:27,016 tfaip.base.scenario.util.print: 
+  CER:  0.3898305084745763
+  PRED: '‪Салар отпамывели сперяальнымыи креянкамх, ыо е нти и и‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 11:41:27,024 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 11:41:27,050 tfaip.base.scenario.util.print: 
+  CER:  0.06521739130434782
+  PRED: '‪магнат 1елдон Адельсон, П7 летний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 11:41:27,062 tfaip.base.scenario.util.print: 
+  CER:  0.12195121951219512
+  PRED: '‪меканизма скребутся какие-то части, что привело к повлениню металичнскик оли в‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 11:41:28,656 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:27:38 | EPOCH 00:51.81 | TRAIN 00:49.96 | TEST 00:01.84 | BATCH 0.024s
+INFO     2021-02-08 11:41:28,656 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 00:51.41 | TRAIN 00:49.64 | TEST 00:01.78 | BATCH 0.024s
+INFO     2021-02-08 11:41:28,656 tfaip.base.trainer.callbacks.e: No better value of val_CER = 0.07702265679836273 found. Keeping best = 0.07422486692667007
+INFO     2021-02-08 11:41:28,658 tfaip.base.trainer.callbacks.l: Results of epoch   32: CER: 0.0586 - ctc_loss: 10.3788 - loss: 10.3788 - val_CER: 0.0770 - val_ctc_loss: 19.6462 - val_loss: 19.6462
+INFO     2021-02-08 11:41:28,660 tfaip.base.trainer.callbacks.l: Start of epoch   33
+INFO     2021-02-08 11:42:18,730 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 11:42:18,738 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪оказалась на территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 11:42:18,746 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 11:42:18,755 tfaip.base.scenario.util.print: 
+  CER:  0.3617021276595745
+  PRED: '‪оржности прооидента гиедусмонато Диевабвноти‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 11:42:18,762 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 11:42:18,770 tfaip.base.scenario.util.print: 
+  CER:  0.3181818181818182
+  PRED: '‪Молитвоы и скены проведкнио нскоторнык овчхаке‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 11:42:18,778 tfaip.base.scenario.util.print: 
+  CER:  0.041666666666666664
+  PRED: '‪этог пост был избран вен Зыскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 11:42:18,789 tfaip.base.scenario.util.print: 
+  CER:  0.3559322033898305
+  PRED: '‪Салар дпамывали сперяальными коранками, о о о и о‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 11:42:18,798 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 11:42:18,820 tfaip.base.scenario.util.print: 
+  CER:  0.10869565217391304
+  PRED: '‪магиат 1епдон Адельсон, Т7 летний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 11:42:18,832 tfaip.base.scenario.util.print: 
+  CER:  0.14634146341463414
+  PRED: '‪меканизма скребутся какие-то части, что привело повлениню металичнскик ол в‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 11:42:20,437 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:28:30 | EPOCH 00:51.81 | TRAIN 00:49.96 | TEST 00:01.84 | BATCH 0.024s
+INFO     2021-02-08 11:42:20,438 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 00:51.78 | TRAIN 00:49.99 | TEST 00:01.78 | BATCH 0.024s
+INFO     2021-02-08 11:42:20,438 tfaip.base.trainer.callbacks.e: No better value of val_CER = 0.07633364945650101 found. Keeping best = 0.07422486692667007
+INFO     2021-02-08 11:42:20,440 tfaip.base.trainer.callbacks.l: Results of epoch   33: CER: 0.0583 - ctc_loss: 10.3245 - loss: 10.3245 - val_CER: 0.0763 - val_ctc_loss: 19.3898 - val_loss: 19.3898
+INFO     2021-02-08 11:42:20,441 tfaip.base.trainer.callbacks.l: Start of epoch   34
+INFO     2021-02-08 11:43:10,335 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 11:43:10,343 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪оказалась на территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 11:43:10,350 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 11:43:10,358 tfaip.base.scenario.util.print: 
+  CER:  0.40425531914893614
+  PRED: '‪рлжности проидена тисдусмонате Ликабеножин‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 11:43:10,365 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 11:43:10,373 tfaip.base.scenario.util.print: 
+  CER:  0.25
+  PRED: '‪Молтвы и скены проведкнио некотоных оанакв‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 11:43:10,381 tfaip.base.scenario.util.print: 
+  CER:  0.020833333333333332
+  PRED: '‪этот пост был избран вен Зыскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 11:43:10,392 tfaip.base.scenario.util.print: 
+  CER:  0.4745762711864407
+  PRED: '‪Еалар втпоамывели сперяальныи кренякоюи, о о тв иди‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 11:43:10,401 tfaip.base.scenario.util.print: 
+  CER:  0.037037037037037035
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавкхаэу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 11:43:10,425 tfaip.base.scenario.util.print: 
+  CER:  0.06521739130434782
+  PRED: '‪магиат Шелдон Адельсон, 77етний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 11:43:10,437 tfaip.base.scenario.util.print: 
+  CER:  0.15853658536585366
+  PRED: '‪меканизма скребутся какне-то части, что привело кповленикю металичскик оили‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 11:43:12,037 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:29:21 | EPOCH 00:51.80 | TRAIN 00:49.96 | TEST 00:01.84 | BATCH 0.024s
+INFO     2021-02-08 11:43:12,037 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 00:51.59 | TRAIN 00:49.81 | TEST 00:01.79 | BATCH 0.024s
+INFO     2021-02-08 11:43:12,037 tfaip.base.trainer.callbacks.e: No better value of val_CER = 0.07625012844800949 found. Keeping best = 0.07422486692667007
+INFO     2021-02-08 11:43:12,039 tfaip.base.trainer.callbacks.l: Results of epoch   34: CER: 0.0576 - ctc_loss: 10.1775 - loss: 10.1775 - val_CER: 0.0763 - val_ctc_loss: 19.0205 - val_loss: 19.0205
+INFO     2021-02-08 11:43:12,040 tfaip.base.trainer.callbacks.l: Start of epoch   35
+INFO     2021-02-08 11:44:01,991 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 11:44:01,999 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪оказалась на территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 11:44:02,007 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 11:44:02,016 tfaip.base.scenario.util.print: 
+  CER:  0.40425531914893614
+  PRED: '‪вижности проидента гисдусмонаете Лехабвмежим‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 11:44:02,024 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 11:44:02,033 tfaip.base.scenario.util.print: 
+  CER:  0.2727272727272727
+  PRED: '‪Молитвы и скены проведкнио нскоторных оакаке‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 11:44:02,041 tfaip.base.scenario.util.print: 
+  CER:  0.020833333333333332
+  PRED: '‪этот пост был избран бен Зыскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 11:44:02,053 tfaip.base.scenario.util.print: 
+  CER:  0.3220338983050847
+  PRED: '‪Салар дтпламывали спецяальными косанками, о о отд ии‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 11:44:02,063 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 11:44:02,087 tfaip.base.scenario.util.print: 
+  CER:  0.06521739130434782
+  PRED: '‪магиат Шелдон Адельсон, Т7летний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 11:44:02,100 tfaip.base.scenario.util.print: 
+  CER:  0.12195121951219512
+  PRED: '‪меканизма скребутся какие-то части, что привело к повлениню металичнскик поли в‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 11:44:03,714 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:30:13 | EPOCH 00:51.80 | TRAIN 00:49.96 | TEST 00:01.84 | BATCH 0.024s
+INFO     2021-02-08 11:44:03,714 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 00:51.67 | TRAIN 00:49.87 | TEST 00:01.80 | BATCH 0.024s
+INFO     2021-02-08 11:44:03,714 tfaip.base.trainer.callbacks.e: Early stopping progressed. (remaining iteration without improvement: 6)
+INFO     2021-02-08 11:44:03,714 tfaip.base.trainer.callbacks.e: No better value of val_CER = 0.07591606676578522 found. Keeping best = 0.07422486692667007
+INFO     2021-02-08 11:44:03,716 tfaip.base.trainer.callbacks.l: Results of epoch   35: CER: 0.0573 - ctc_loss: 10.0461 - loss: 10.0461 - val_CER: 0.0759 - val_ctc_loss: 19.6496 - val_loss: 19.6496
+INFO     2021-02-08 11:44:03,717 tfaip.base.trainer.callbacks.l: Start of epoch   36
+INFO     2021-02-08 11:44:54,290 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 11:44:54,296 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪оказалась на территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 11:44:54,304 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 11:44:54,313 tfaip.base.scenario.util.print: 
+  CER:  0.3617021276595745
+  PRED: '‪ертжности президента грсдусмоната Пиовабеожим‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 11:44:54,320 tfaip.base.scenario.util.print: 
+  CER:  0.022727272727272728
+  PRED: '‪напротив, традиционно крайне лояльны к нему:.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 11:44:54,328 tfaip.base.scenario.util.print: 
+  CER:  0.18181818181818182
+  PRED: '‪Молитвы и скены проведкнио некоторых оврхдке‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 11:44:54,336 tfaip.base.scenario.util.print: 
+  CER:  0.020833333333333332
+  PRED: '‪этот пост был избран вен Зыскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 11:44:54,348 tfaip.base.scenario.util.print: 
+  CER:  0.3389830508474576
+  PRED: '‪Сахар дтамывали сперяальныи кранками, о о уи и ни‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 11:44:54,357 tfaip.base.scenario.util.print: 
+  CER:  0.018518518518518517
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавкхазу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 11:44:54,379 tfaip.base.scenario.util.print: 
+  CER:  0.06521739130434782
+  PRED: '‪магнат елдон Адельсон, Т7 летний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 11:44:54,392 tfaip.base.scenario.util.print: 
+  CER:  0.18292682926829268
+  PRED: '‪меканизма сктребутся какие-то части, что привело кповленю металичнск ол вве‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 11:44:56,034 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:31:05 | EPOCH 00:51.81 | TRAIN 00:49.97 | TEST 00:01.84 | BATCH 0.024s
+INFO     2021-02-08 11:44:56,034 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 00:52.32 | TRAIN 00:50.50 | TEST 00:01.82 | BATCH 0.025s
+INFO     2021-02-08 11:44:56,034 tfaip.base.trainer.callbacks.e: No better value of val_CER = 0.07821276038885117 found. Keeping best = 0.07422486692667007
+INFO     2021-02-08 11:44:56,036 tfaip.base.trainer.callbacks.l: Results of epoch   36: CER: 0.0569 - ctc_loss: 9.9246 - loss: 9.9246 - val_CER: 0.0782 - val_ctc_loss: 18.7932 - val_loss: 18.7932
+INFO     2021-02-08 11:44:56,038 tfaip.base.trainer.callbacks.l: Start of epoch   37
+INFO     2021-02-08 11:45:46,041 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 11:45:46,049 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪оказалась на территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 11:45:46,056 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 11:45:46,064 tfaip.base.scenario.util.print: 
+  CER:  0.3404255319148936
+  PRED: '‪елжности прсзидента гиедусмонаето пихабеожи‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 11:45:46,072 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 11:45:46,079 tfaip.base.scenario.util.print: 
+  CER:  0.2727272727272727
+  PRED: '‪Молитвы и скены проведкнио нскоторык оахаке‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 11:45:46,087 tfaip.base.scenario.util.print: 
+  CER:  0.020833333333333332
+  PRED: '‪этот пост был избран бен Зыскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 11:45:46,098 tfaip.base.scenario.util.print: 
+  CER:  0.4406779661016949
+  PRED: '‪Салар втламывали соеральныи крнкани, о т по‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 11:45:46,107 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 11:45:46,132 tfaip.base.scenario.util.print: 
+  CER:  0.06521739130434782
+  PRED: '‪магнат Шепдон Адельсон, Т7 летний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 11:45:46,145 tfaip.base.scenario.util.print: 
+  CER:  0.13414634146341464
+  PRED: '‪меканизма скребутся какне-то части, что привело кповленикю металичнскик оло в‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 11:45:47,795 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:31:57 | EPOCH 00:51.81 | TRAIN 00:49.97 | TEST 00:01.84 | BATCH 0.024s
+INFO     2021-02-08 11:45:47,795 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 00:51.76 | TRAIN 00:49.93 | TEST 00:01.83 | BATCH 0.024s
+INFO     2021-02-08 11:45:47,795 tfaip.base.trainer.callbacks.e: No better value of val_CER = 0.07804572582244873 found. Keeping best = 0.07422486692667007
+INFO     2021-02-08 11:45:47,797 tfaip.base.trainer.callbacks.l: Results of epoch   37: CER: 0.0568 - ctc_loss: 9.8549 - loss: 9.8549 - val_CER: 0.0780 - val_ctc_loss: 19.3034 - val_loss: 19.3034
+INFO     2021-02-08 11:45:47,798 tfaip.base.trainer.callbacks.l: Start of epoch   38
+INFO     2021-02-08 11:46:37,513 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 11:46:37,521 tfaip.base.scenario.util.print: 
+  CER:  0.023809523809523808
+  PRED: '‪оказалась иа территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 11:46:37,528 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 11:46:37,536 tfaip.base.scenario.util.print: 
+  CER:  0.40425531914893614
+  PRED: '‪отжносии преидена гедусмонато Пиозабвнтожи‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 11:46:37,543 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 11:46:37,551 tfaip.base.scenario.util.print: 
+  CER:  0.25
+  PRED: '‪Молтвы и скемы проведкнио нскоторых овхаке‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 11:46:37,558 tfaip.base.scenario.util.print: 
+  CER:  0.020833333333333332
+  PRED: '‪этот пост был избран бен Зыскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 11:46:37,570 tfaip.base.scenario.util.print: 
+  CER:  0.423728813559322
+  PRED: '‪Салар втамывалми соеряальныоми кренакам, о бое от ии‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 11:46:37,579 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 11:46:37,606 tfaip.base.scenario.util.print: 
+  CER:  0.021739130434782608
+  PRED: '‪магнат 1елдон Адельсон, 77-летний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 11:46:37,618 tfaip.base.scenario.util.print: 
+  CER:  0.13414634146341464
+  PRED: '‪меканизма скребутся какие-то части, что привело к овленикю металичнекик оло в‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 11:46:39,172 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:32:48 | EPOCH 00:51.80 | TRAIN 00:49.96 | TEST 00:01.84 | BATCH 0.024s
+INFO     2021-02-08 11:46:39,172 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 00:51.37 | TRAIN 00:49.64 | TEST 00:01.74 | BATCH 0.024s
+INFO     2021-02-08 11:46:39,172 tfaip.base.trainer.callbacks.e: No better value of val_CER = 0.0776699036359787 found. Keeping best = 0.07422486692667007
+INFO     2021-02-08 11:46:39,174 tfaip.base.trainer.callbacks.l: Results of epoch   38: CER: 0.0556 - ctc_loss: 9.6092 - loss: 9.6092 - val_CER: 0.0777 - val_ctc_loss: 20.0728 - val_loss: 20.0728
+INFO     2021-02-08 11:46:39,176 tfaip.base.trainer.callbacks.l: Start of epoch   39
+INFO     2021-02-08 11:47:29,133 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 11:47:29,141 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪оказалась на территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 11:47:29,148 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 11:47:29,156 tfaip.base.scenario.util.print: 
+  CER:  0.425531914893617
+  PRED: '‪ожности проидениа гредтсмонате, ппозабеножи‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 11:47:29,164 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 11:47:29,172 tfaip.base.scenario.util.print: 
+  CER:  0.25
+  PRED: '‪Молитвы и скены прпведкния нскоторых овнаке‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 11:47:29,180 tfaip.base.scenario.util.print: 
+  CER:  0.020833333333333332
+  PRED: '‪этот пост был избран бен Зыскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 11:47:29,191 tfaip.base.scenario.util.print: 
+  CER:  0.3728813559322034
+  PRED: '‪Сахар дтпамывели сперяальными кренкаи, о о оги ини‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 11:47:29,200 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 11:47:29,220 tfaip.base.scenario.util.print: 
+  CER:  0.021739130434782608
+  PRED: '‪магнат Шелдон Адельсон, 77 летний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 11:47:29,232 tfaip.base.scenario.util.print: 
+  CER:  0.13414634146341464
+  PRED: '‪меканизма скребутся какие-то части, что привело повлениню металическик оля в‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 11:47:30,831 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:33:40 | EPOCH 00:51.80 | TRAIN 00:49.96 | TEST 00:01.84 | BATCH 0.024s
+INFO     2021-02-08 11:47:30,832 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 00:51.66 | TRAIN 00:49.88 | TEST 00:01.78 | BATCH 0.024s
+INFO     2021-02-08 11:47:30,832 tfaip.base.trainer.callbacks.e: No better value of val_CER = 0.0765424370765686 found. Keeping best = 0.07422486692667007
+INFO     2021-02-08 11:47:30,833 tfaip.base.trainer.callbacks.l: Results of epoch   39: CER: 0.0557 - ctc_loss: 9.6380 - loss: 9.6380 - val_CER: 0.0765 - val_ctc_loss: 20.0427 - val_loss: 20.0427
+INFO     2021-02-08 11:47:30,835 tfaip.base.trainer.callbacks.l: Start of epoch   40
+INFO     2021-02-08 11:48:20,978 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 11:48:20,985 tfaip.base.scenario.util.print: 
+  CER:  0.023809523809523808
+  PRED: '‪оказалась иа территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 11:48:20,992 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 11:48:21,001 tfaip.base.scenario.util.print: 
+  CER:  0.44680851063829785
+  PRED: '‪оижности прсидента гиедтсманаате Мизабеожни‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 11:48:21,008 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 11:48:21,016 tfaip.base.scenario.util.print: 
+  CER:  0.29545454545454547
+  PRED: '‪Молитвы и скемы прпвсдкния нскоторыик охаке‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 11:48:21,024 tfaip.base.scenario.util.print: 
+  CER:  0.041666666666666664
+  PRED: '‪этот пост бвл избран бен Зыскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 11:48:21,035 tfaip.base.scenario.util.print: 
+  CER:  0.3389830508474576
+  PRED: '‪Санар отпаммвели спецяальными косанкаюи, о бои пги ии‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 11:48:21,044 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 11:48:21,066 tfaip.base.scenario.util.print: 
+  CER:  0.043478260869565216
+  PRED: '‪магиат Шелдон Адельсон, 77 летний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 11:48:21,077 tfaip.base.scenario.util.print: 
+  CER:  0.14634146341463414
+  PRED: '‪меканизма скребутся какие-то части, что привело повлеию металичнскик ол в‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 11:48:22,685 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:34:32 | EPOCH 00:51.80 | TRAIN 00:49.96 | TEST 00:01.83 | BATCH 0.024s
+INFO     2021-02-08 11:48:22,685 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 00:51.85 | TRAIN 00:50.06 | TEST 00:01.79 | BATCH 0.024s
+INFO     2021-02-08 11:48:22,686 tfaip.base.trainer.callbacks.e: Early stopping progressed. (remaining iteration without improvement: 5)
+INFO     2021-02-08 11:48:22,686 tfaip.base.trainer.callbacks.e: No better value of val_CER = 0.0796116515994072 found. Keeping best = 0.07422486692667007
+INFO     2021-02-08 11:48:22,687 tfaip.base.trainer.callbacks.l: Results of epoch   40: CER: 0.0555 - ctc_loss: 9.5433 - loss: 9.5433 - val_CER: 0.0796 - val_ctc_loss: 19.9079 - val_loss: 19.9079
+INFO     2021-02-08 11:48:22,689 tfaip.base.trainer.callbacks.l: Start of epoch   41
+INFO     2021-02-08 11:49:13,500 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 11:49:13,507 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪оказалась на территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 11:49:13,516 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 11:49:13,526 tfaip.base.scenario.util.print: 
+  CER:  0.425531914893617
+  PRED: '‪оржности проидена тисдусмонаате Пикабеножи‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 11:49:13,534 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 11:49:13,544 tfaip.base.scenario.util.print: 
+  CER:  0.22727272727272727
+  PRED: '‪Молтвы и скены проведкнио некотоных оврхдке‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 11:49:13,553 tfaip.base.scenario.util.print: 
+  CER:  0.020833333333333332
+  PRED: '‪этот пост был избран бен Зыскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 11:49:13,567 tfaip.base.scenario.util.print: 
+  CER:  0.3728813559322034
+  PRED: '‪Сахар втиамывели сперяальнымыи кренками, ло ол ити ии‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 11:49:13,577 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 11:49:13,602 tfaip.base.scenario.util.print: 
+  CER:  0.043478260869565216
+  PRED: '‪магнат Шепдон Адельсон, 77 летний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 11:49:13,614 tfaip.base.scenario.util.print: 
+  CER:  0.17073170731707318
+  PRED: '‪меканизма скребутся какие-то части, что привел повленю металичнекик ол в‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 11:49:15,491 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:35:25 | EPOCH 00:51.82 | TRAIN 00:49.98 | TEST 00:01.84 | BATCH 0.024s
+INFO     2021-02-08 11:49:15,491 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 00:52.80 | TRAIN 00:50.73 | TEST 00:02.07 | BATCH 0.025s
+INFO     2021-02-08 11:49:15,492 tfaip.base.trainer.callbacks.e: No better value of val_CER = 0.0786929726600647 found. Keeping best = 0.07422486692667007
+INFO     2021-02-08 11:49:15,493 tfaip.base.trainer.callbacks.l: Results of epoch   41: CER: 0.0549 - ctc_loss: 9.5073 - loss: 9.5073 - val_CER: 0.0787 - val_ctc_loss: 20.0739 - val_loss: 20.0739
+INFO     2021-02-08 11:49:15,495 tfaip.base.trainer.callbacks.l: Start of epoch   42
+INFO     2021-02-08 11:50:08,710 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 11:50:08,717 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪оказалась на территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 11:50:08,736 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 11:50:08,748 tfaip.base.scenario.util.print: 
+  CER:  0.3617021276595745
+  PRED: '‪оижности прооидента тросдусмоната Лиесабеножин‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 11:50:08,764 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 11:50:08,771 tfaip.base.scenario.util.print: 
+  CER:  0.20454545454545456
+  PRED: '‪Молтвы и скезны проведкнио некоторых ордкв‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 11:50:08,779 tfaip.base.scenario.util.print: 
+  CER:  0.020833333333333332
+  PRED: '‪этот пост был избран вен Зыскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 11:50:08,791 tfaip.base.scenario.util.print: 
+  CER:  0.3898305084745763
+  PRED: '‪Салар отнамывали соеряальныи кренкани, до о иги и и‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 11:50:08,799 tfaip.base.scenario.util.print: 
+  CER:  0.018518518518518517
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавкхазу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 11:50:08,819 tfaip.base.scenario.util.print: 
+  CER:  0.043478260869565216
+  PRED: '‪магнат 1елдон Адельсон, 77 летний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 11:50:08,833 tfaip.base.scenario.util.print: 
+  CER:  0.13414634146341464
+  PRED: '‪меканизма скребутся какие-то части, что привело повлениню металичнскик онло в‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 11:50:10,433 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:36:20 | EPOCH 00:51.90 | TRAIN 00:50.05 | TEST 00:01.84 | BATCH 0.024s
+INFO     2021-02-08 11:50:10,434 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 00:54.94 | TRAIN 00:53.03 | TEST 00:01.91 | BATCH 0.026s
+INFO     2021-02-08 11:50:10,434 tfaip.base.trainer.callbacks.e: No better value of val_CER = 0.07906879484653473 found. Keeping best = 0.07422486692667007
+INFO     2021-02-08 11:50:10,435 tfaip.base.trainer.callbacks.l: Results of epoch   42: CER: 0.0549 - ctc_loss: 9.3652 - loss: 9.3652 - val_CER: 0.0791 - val_ctc_loss: 19.6510 - val_loss: 19.6510
+INFO     2021-02-08 11:50:10,437 tfaip.base.trainer.callbacks.l: Start of epoch   43
+INFO     2021-02-08 11:51:00,647 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 11:51:00,654 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪оказалась на территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 11:51:00,665 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 11:51:00,673 tfaip.base.scenario.util.print: 
+  CER:  0.3829787234042553
+  PRED: '‪отжности прсзидента тисдусмоназта Диовабвножи‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 11:51:00,680 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 11:51:00,708 tfaip.base.scenario.util.print: 
+  CER:  0.22727272727272727
+  PRED: '‪Молитвы и скены проведкния нскоторых очноке‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 11:51:00,716 tfaip.base.scenario.util.print: 
+  CER:  0.041666666666666664
+  PRED: '‪этог пост был избран бен Зыскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 11:51:00,730 tfaip.base.scenario.util.print: 
+  CER:  0.4067796610169492
+  PRED: '‪Салар втламовали сперяальнымыи коенкамх, ло о и и и‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 11:51:00,749 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 11:51:00,783 tfaip.base.scenario.util.print: 
+  CER:  0.043478260869565216
+  PRED: '‪магнат Шелдон Адельсон, Т7 летний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 11:51:00,801 tfaip.base.scenario.util.print: 
+  CER:  0.15853658536585366
+  PRED: '‪меканизма скребутся какие-то части, что провело повлениню металичнскик оль в‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 11:51:02,393 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:37:12 | EPOCH 00:51.90 | TRAIN 00:50.05 | TEST 00:01.84 | BATCH 0.024s
+INFO     2021-02-08 11:51:02,393 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 00:51.96 | TRAIN 00:50.07 | TEST 00:01.88 | BATCH 0.024s
+INFO     2021-02-08 11:51:02,393 tfaip.base.trainer.callbacks.e: No better value of val_CER = 0.07677210867404938 found. Keeping best = 0.07422486692667007
+INFO     2021-02-08 11:51:02,395 tfaip.base.trainer.callbacks.l: Results of epoch   43: CER: 0.0544 - ctc_loss: 9.3324 - loss: 9.3324 - val_CER: 0.0768 - val_ctc_loss: 20.1221 - val_loss: 20.1221
+INFO     2021-02-08 11:51:02,397 tfaip.base.trainer.callbacks.l: Start of epoch   44
+INFO     2021-02-08 11:51:53,321 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 11:51:53,328 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪оказалась на территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 11:51:53,335 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 11:51:53,344 tfaip.base.scenario.util.print: 
+  CER:  0.3617021276595745
+  PRED: '‪оржности презмдента тредусмонаате Диезабвножни‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 11:51:53,351 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 11:51:53,358 tfaip.base.scenario.util.print: 
+  CER:  0.22727272727272727
+  PRED: '‪Молитвы и скемы провсдкнио некоторых оачнаке‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 11:51:53,366 tfaip.base.scenario.util.print: 
+  CER:  0.020833333333333332
+  PRED: '‪этот пост был избран бен Зыскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 11:51:53,377 tfaip.base.scenario.util.print: 
+  CER:  0.4067796610169492
+  PRED: '‪Салар вотамывели сперяольнымыи кренкамх, ло бо сиги ии‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 11:51:53,386 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 11:51:53,409 tfaip.base.scenario.util.print: 
+  CER:  0.021739130434782608
+  PRED: '‪магнат Шелдон Адельсон, 77 летний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 11:51:53,421 tfaip.base.scenario.util.print: 
+  CER:  0.14634146341463414
+  PRED: '‪меканизма скребутся какие-то части, что привел кпопеленикю металическик пол в‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 11:51:55,348 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:38:05 | EPOCH 00:51.92 | TRAIN 00:50.07 | TEST 00:01.85 | BATCH 0.024s
+INFO     2021-02-08 11:51:55,348 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 00:52.95 | TRAIN 00:50.84 | TEST 00:02.11 | BATCH 0.025s
+INFO     2021-02-08 11:51:55,348 tfaip.base.trainer.callbacks.e: No better value of val_CER = 0.07808748632669449 found. Keeping best = 0.07422486692667007
+INFO     2021-02-08 11:51:55,350 tfaip.base.trainer.callbacks.l: Results of epoch   44: CER: 0.0543 - ctc_loss: 9.2465 - loss: 9.2465 - val_CER: 0.0781 - val_ctc_loss: 20.2069 - val_loss: 20.2069
+INFO     2021-02-08 11:51:55,353 tfaip.base.trainer.callbacks.l: Start of epoch   45
+INFO     2021-02-08 11:52:50,214 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 11:52:50,222 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪оказалась на территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 11:52:50,231 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 11:52:50,242 tfaip.base.scenario.util.print: 
+  CER:  0.3404255319148936
+  PRED: '‪оажносии преоидента посдусмонана нисабеножним‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 11:52:50,250 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 11:52:50,261 tfaip.base.scenario.util.print: 
+  CER:  0.25
+  PRED: '‪Молитвоы и скемы провсдкнио некоторых оаке‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 11:52:50,270 tfaip.base.scenario.util.print: 
+  CER:  0.020833333333333332
+  PRED: '‪этот пост был избран бен Зыскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 11:52:50,282 tfaip.base.scenario.util.print: 
+  CER:  0.3220338983050847
+  PRED: '‪Сахар втпамывели сперальныи кренками, до бол сти и‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 11:52:50,291 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 11:52:50,319 tfaip.base.scenario.util.print: 
+  CER:  0.021739130434782608
+  PRED: '‪магнат Шелдон Адельсон, 77летний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 11:52:50,333 tfaip.base.scenario.util.print: 
+  CER:  0.17073170731707318
+  PRED: '‪меканизма скребутся какие-то части, что привел повленю металичнекик пли в‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 11:52:57,394 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:39:07 | EPOCH 00:52.15 | TRAIN 00:50.18 | TEST 00:01.97 | BATCH 0.024s
+INFO     2021-02-08 11:52:57,395 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 01:02.04 | TRAIN 00:54.75 | TEST 00:07.29 | BATCH 0.027s
+INFO     2021-02-08 11:52:57,395 tfaip.base.trainer.callbacks.e: Early stopping progressed. (remaining iteration without improvement: 4)
+INFO     2021-02-08 11:52:57,395 tfaip.base.trainer.callbacks.e: No better value of val_CER = 0.07936110347509384 found. Keeping best = 0.07422486692667007
+INFO     2021-02-08 11:52:57,397 tfaip.base.trainer.callbacks.l: Results of epoch   45: CER: 0.0537 - ctc_loss: 9.1158 - loss: 9.1158 - val_CER: 0.0794 - val_ctc_loss: 20.0491 - val_loss: 20.0491
+INFO     2021-02-08 11:52:57,411 tfaip.base.trainer.callbacks.l: Start of epoch   46
+INFO     2021-02-08 11:55:16,989 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 11:55:16,996 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪оказалась на территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 11:55:17,005 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 11:55:17,022 tfaip.base.scenario.util.print: 
+  CER:  0.40425531914893614
+  PRED: '‪Вужности президента тирсдусмоназт Дивабеожнин‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 11:55:17,029 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 11:55:17,038 tfaip.base.scenario.util.print: 
+  CER:  0.22727272727272727
+  PRED: '‪Молитвы и скены проведкнио некотоных очндке‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 11:55:17,046 tfaip.base.scenario.util.print: 
+  CER:  0.041666666666666664
+  PRED: '‪этот пост бвл избран бен Зыскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 11:55:17,058 tfaip.base.scenario.util.print: 
+  CER:  0.4406779661016949
+  PRED: '‪Салар втпламывели сперяильньмыи кренкаи, ло бо ти ии.‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 11:55:17,068 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 11:55:17,114 tfaip.base.scenario.util.print: 
+  CER:  0.043478260869565216
+  PRED: '‪магнат Шелдон Адельсон, Т7 летний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 11:55:17,127 tfaip.base.scenario.util.print: 
+  CER:  0.18292682926829268
+  PRED: '‪меанизма скребутся какие-то части, что привело попвленикю металичнекик омоли‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 11:55:23,987 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:41:33 | EPOCH 00:54.20 | TRAIN 00:52.12 | TEST 00:02.08 | BATCH 0.025s
+INFO     2021-02-08 11:55:23,987 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 02:26.58 | TRAIN 02:19.46 | TEST 00:07.12 | BATCH 0.068s
+INFO     2021-02-08 11:55:23,988 tfaip.base.trainer.callbacks.e: No better value of val_CER = 0.07693913578987122 found. Keeping best = 0.07422486692667007
+INFO     2021-02-08 11:55:23,990 tfaip.base.trainer.callbacks.l: Results of epoch   46: CER: 0.0533 - ctc_loss: 9.0986 - loss: 9.0986 - val_CER: 0.0769 - val_ctc_loss: 20.6345 - val_loss: 20.6345
+INFO     2021-02-08 11:55:23,992 tfaip.base.trainer.callbacks.l: Start of epoch   47
+INFO     2021-02-08 11:57:40,095 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 11:57:40,104 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪оказалась на территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 11:57:40,115 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 11:57:40,127 tfaip.base.scenario.util.print: 
+  CER:  0.3829787234042553
+  PRED: '‪вВажности преоидента грсдусмонаате Диозабеножии‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 11:57:40,137 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 11:57:40,156 tfaip.base.scenario.util.print: 
+  CER:  0.25
+  PRED: '‪Молитвы и скены проведкнио нскоторык овчудке‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 11:57:40,165 tfaip.base.scenario.util.print: 
+  CER:  0.020833333333333332
+  PRED: '‪этот пост был избран бен Зыскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 11:57:40,178 tfaip.base.scenario.util.print: 
+  CER:  0.4406779661016949
+  PRED: '‪Бахар втпламвали сперяальнымыи кренкаих, о оу ити ики.‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 11:57:40,188 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 11:57:40,244 tfaip.base.scenario.util.print: 
+  CER:  0.08695652173913043
+  PRED: '‪магнат 1епдон Адельсон, Т7 летний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 11:57:40,257 tfaip.base.scenario.util.print: 
+  CER:  0.17073170731707318
+  PRED: '‪меканизма скребутся какие то части, что привело попвленикю металичнекик олы в‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 11:57:47,249 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:43:57 | EPOCH 00:56.09 | TRAIN 00:53.90 | TEST 00:02.19 | BATCH 0.026s
+INFO     2021-02-08 11:57:47,249 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 02:23.26 | TRAIN 02:15.99 | TEST 00:07.27 | BATCH 0.066s
+INFO     2021-02-08 11:57:47,250 tfaip.base.trainer.callbacks.e: No better value of val_CER = 0.07635452598333359 found. Keeping best = 0.07422486692667007
+INFO     2021-02-08 11:57:47,251 tfaip.base.trainer.callbacks.l: Results of epoch   47: CER: 0.0537 - ctc_loss: 9.0893 - loss: 9.0893 - val_CER: 0.0764 - val_ctc_loss: 20.5231 - val_loss: 20.5231
+INFO     2021-02-08 11:57:47,265 tfaip.base.trainer.callbacks.l: Start of epoch   48
+INFO     2021-02-08 12:00:13,125 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 12:00:13,134 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪оказалась на территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 12:00:13,144 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 12:00:13,152 tfaip.base.scenario.util.print: 
+  CER:  0.3829787234042553
+  PRED: '‪Важности прооидента рсдусмонате Дисабоножни‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 12:00:13,159 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 12:00:13,167 tfaip.base.scenario.util.print: 
+  CER:  0.2727272727272727
+  PRED: '‪Молитвы и скены проведкнио нскоторык оочнаке‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 12:00:13,174 tfaip.base.scenario.util.print: 
+  CER:  0.020833333333333332
+  PRED: '‪этот пост был избран бен Зыскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 12:00:13,187 tfaip.base.scenario.util.print: 
+  CER:  0.4576271186440678
+  PRED: '‪Салар втамоывали сперинльньсыи кренакани, о о ого ои‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 12:00:13,197 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 12:00:13,237 tfaip.base.scenario.util.print: 
+  CER:  0.043478260869565216
+  PRED: '‪магнат 1елдон Адельсон, 77летний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 12:00:13,258 tfaip.base.scenario.util.print: 
+  CER:  0.12195121951219512
+  PRED: '‪меканизма скребутся какие-то части, что привело кповлениню металичскик оло в‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 12:00:20,189 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:46:29 | EPOCH 00:58.11 | TRAIN 00:55.82 | TEST 00:02.30 | BATCH 0.027s
+INFO     2021-02-08 12:00:20,189 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 02:32.92 | TRAIN 02:25.75 | TEST 00:07.17 | BATCH 0.071s
+INFO     2021-02-08 12:00:20,190 tfaip.base.trainer.callbacks.e: No better value of val_CER = 0.07967428863048553 found. Keeping best = 0.07422486692667007
+INFO     2021-02-08 12:00:20,192 tfaip.base.trainer.callbacks.l: Results of epoch   48: CER: 0.0526 - ctc_loss: 8.9219 - loss: 8.9219 - val_CER: 0.0797 - val_ctc_loss: 19.7706 - val_loss: 19.7706
+INFO     2021-02-08 12:00:20,202 tfaip.base.trainer.callbacks.l: Start of epoch   49
+INFO     2021-02-08 12:02:48,899 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 12:02:48,906 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪оказалась на территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 12:02:48,913 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 12:02:48,922 tfaip.base.scenario.util.print: 
+  CER:  0.3191489361702128
+  PRED: '‪олжности президента трсдтсмонаате Миесабеножин‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 12:02:48,929 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 12:02:48,937 tfaip.base.scenario.util.print: 
+  CER:  0.22727272727272727
+  PRED: '‪Молитвы и скены проведкнио некоторык ораке‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 12:02:48,945 tfaip.base.scenario.util.print: 
+  CER:  0.020833333333333332
+  PRED: '‪этот пост был избран бен Зыскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 12:02:48,955 tfaip.base.scenario.util.print: 
+  CER:  0.4406779661016949
+  PRED: '‪Еанар втамвели сперяальныи коениани, до ол ти и‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 12:02:48,964 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 12:02:49,011 tfaip.base.scenario.util.print: 
+  CER:  0.043478260869565216
+  PRED: '‪магнат Шелдон Адельсон, Т7летний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 12:02:49,023 tfaip.base.scenario.util.print: 
+  CER:  0.18292682926829268
+  PRED: '‪меканизма скребутся какие то части, что привело к опвленю металичнекик онли‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 12:02:56,370 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:49:06 | EPOCH 01:00.11 | TRAIN 00:57.71 | TEST 00:02.40 | BATCH 0.028s
+INFO     2021-02-08 12:02:56,370 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 02:36.17 | TRAIN 02:28.57 | TEST 00:07.60 | BATCH 0.072s
+INFO     2021-02-08 12:02:56,370 tfaip.base.trainer.callbacks.e: No better value of val_CER = 0.07954901456832886 found. Keeping best = 0.07422486692667007
+INFO     2021-02-08 12:02:56,372 tfaip.base.trainer.callbacks.l: Results of epoch   49: CER: 0.0529 - ctc_loss: 8.9092 - loss: 8.9092 - val_CER: 0.0795 - val_ctc_loss: 19.6790 - val_loss: 19.6790
+INFO     2021-02-08 12:02:56,385 tfaip.base.trainer.callbacks.l: Start of epoch   50
+INFO     2021-02-08 12:05:29,231 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 12:05:29,240 tfaip.base.scenario.util.print: 
+  CER:  0.023809523809523808
+  PRED: '‪оказалась иа территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 12:05:29,254 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 12:05:29,263 tfaip.base.scenario.util.print: 
+  CER:  0.3617021276595745
+  PRED: '‪аяности президента тисдусмонаато Дисабевожим‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 12:05:29,271 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 12:05:29,279 tfaip.base.scenario.util.print: 
+  CER:  0.22727272727272727
+  PRED: '‪Молитвоы и скены проведкнио некоторых оврхаке‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 12:05:29,287 tfaip.base.scenario.util.print: 
+  CER:  0.041666666666666664
+  PRED: '‪этот пост быил избран бен Зыскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 12:05:29,304 tfaip.base.scenario.util.print: 
+  CER:  0.4067796610169492
+  PRED: '‪Сахар втпаммвали соеряальныоми коеанкаи, ло бо иуи ии‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 12:05:29,313 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 12:05:29,378 tfaip.base.scenario.util.print: 
+  CER:  0.043478260869565216
+  PRED: '‪магнат елдон Адельсон, 77 летний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 12:05:29,398 tfaip.base.scenario.util.print: 
+  CER:  0.0975609756097561
+  PRED: '‪меканизма скребутся какие-то части, что привело к оелению металическик оилои в‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 12:05:36,953 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:51:46 | EPOCH 01:02.12 | TRAIN 00:59.61 | TEST 00:02.51 | BATCH 0.029s
+INFO     2021-02-08 12:05:36,954 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 02:40.57 | TRAIN 02:32.72 | TEST 00:07.85 | BATCH 0.074s
+INFO     2021-02-08 12:05:36,954 tfaip.base.trainer.callbacks.e: Early stopping progressed. (remaining iteration without improvement: 3)
+INFO     2021-02-08 12:05:36,954 tfaip.base.trainer.callbacks.e: No better value of val_CER = 0.07789957523345947 found. Keeping best = 0.07422486692667007
+INFO     2021-02-08 12:05:36,956 tfaip.base.trainer.callbacks.l: Results of epoch   50: CER: 0.0523 - ctc_loss: 8.8151 - loss: 8.8151 - val_CER: 0.0779 - val_ctc_loss: 20.2847 - val_loss: 20.2847
+INFO     2021-02-08 12:05:36,966 tfaip.base.trainer.callbacks.l: Start of epoch   51
+INFO     2021-02-08 12:08:08,216 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 12:08:08,223 tfaip.base.scenario.util.print: 
+  CER:  0.023809523809523808
+  PRED: '‪оказалась на территории Западного Белина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 12:08:08,234 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 12:08:08,244 tfaip.base.scenario.util.print: 
+  CER:  0.3404255319148936
+  PRED: '‪олжности прсзидента пиасдтсмонато Мисаббнохин‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 12:08:08,252 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 12:08:08,259 tfaip.base.scenario.util.print: 
+  CER:  0.2727272727272727
+  PRED: '‪Молитвы и скены прпведкнио некоторык оакаке‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 12:08:08,267 tfaip.base.scenario.util.print: 
+  CER:  0.020833333333333332
+  PRED: '‪этот пост был избран бен Зыскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 12:08:08,278 tfaip.base.scenario.util.print: 
+  CER:  0.3898305084745763
+  PRED: '‪Сахар отамсовали сперяальнымыи коеанкаик, д о до ота иои‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 12:08:08,286 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 12:08:08,337 tfaip.base.scenario.util.print: 
+  CER:  0.043478260869565216
+  PRED: '‪магнат елдон Адельсон, 77летний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 12:08:08,355 tfaip.base.scenario.util.print: 
+  CER:  0.24390243902439024
+  PRED: '‪меканизма скребутся какне-то части, что привел олялениню металичнекик нолн‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 12:08:15,516 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:54:25 | EPOCH 01:04.01 | TRAIN 01:01.40 | TEST 00:02.61 | BATCH 0.030s
+INFO     2021-02-08 12:08:15,516 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 02:38.55 | TRAIN 02:31.14 | TEST 00:07.41 | BATCH 0.074s
+INFO     2021-02-08 12:08:15,517 tfaip.base.trainer.callbacks.e: No better value of val_CER = 0.08157427608966827 found. Keeping best = 0.07422486692667007
+INFO     2021-02-08 12:08:15,519 tfaip.base.trainer.callbacks.l: Results of epoch   51: CER: 0.0522 - ctc_loss: 8.7913 - loss: 8.7913 - val_CER: 0.0816 - val_ctc_loss: 20.3059 - val_loss: 20.3059
+INFO     2021-02-08 12:08:15,522 tfaip.base.trainer.callbacks.l: Start of epoch   52
+INFO     2021-02-08 12:10:42,722 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 12:10:42,746 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪оказалась на территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 12:10:42,756 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 12:10:42,765 tfaip.base.scenario.util.print: 
+  CER:  0.40425531914893614
+  PRED: '‪велжности президента тисдусманате пиевабеножни‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 12:10:42,772 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 12:10:42,780 tfaip.base.scenario.util.print: 
+  CER:  0.25
+  PRED: '‪Молитвы и скены проведкнио нскоторых оачкае‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 12:10:42,787 tfaip.base.scenario.util.print: 
+  CER:  0.041666666666666664
+  PRED: '‪этот пост быил избран бен Зыскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 12:10:42,800 tfaip.base.scenario.util.print: 
+  CER:  0.3389830508474576
+  PRED: '‪Салар отиламывали спецявльнымыи коранкаи, ло бол с т ии‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 12:10:42,809 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 12:10:42,848 tfaip.base.scenario.util.print: 
+  CER:  0.021739130434782608
+  PRED: '‪магнат Шелдон Адельсон, 77 летний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 12:10:42,862 tfaip.base.scenario.util.print: 
+  CER:  0.14634146341463414
+  PRED: '‪меканизма скребутся какие-то части, что привело к повленикю металичнсик ол ви‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 12:10:49,497 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:56:59 | EPOCH 01:05.74 | TRAIN 01:03.05 | TEST 00:02.69 | BATCH 0.031s
+INFO     2021-02-08 12:10:49,497 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 02:33.97 | TRAIN 02:27.09 | TEST 00:06.88 | BATCH 0.072s
+INFO     2021-02-08 12:10:49,497 tfaip.base.trainer.callbacks.e: No better value of val_CER = 0.08082263171672821 found. Keeping best = 0.07422486692667007
+INFO     2021-02-08 12:10:49,499 tfaip.base.trainer.callbacks.l: Results of epoch   52: CER: 0.0522 - ctc_loss: 8.7719 - loss: 8.7719 - val_CER: 0.0808 - val_ctc_loss: 20.3139 - val_loss: 20.3139
+INFO     2021-02-08 12:10:49,515 tfaip.base.trainer.callbacks.l: Start of epoch   53
+INFO     2021-02-08 12:13:11,504 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 12:13:11,512 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪оказалась на территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 12:13:11,519 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 12:13:11,531 tfaip.base.scenario.util.print: 
+  CER:  0.3617021276595745
+  PRED: '‪ожности праиденса гедусмонато Пизабвножим‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 12:13:11,538 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 12:13:11,546 tfaip.base.scenario.util.print: 
+  CER:  0.2727272727272727
+  PRED: '‪Молитвы и скены проведкнио нскотонык овчде‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 12:13:11,554 tfaip.base.scenario.util.print: 
+  CER:  0.020833333333333332
+  PRED: '‪этот пост был избран бен Зыскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 12:13:11,564 tfaip.base.scenario.util.print: 
+  CER:  0.4406779661016949
+  PRED: '‪Салар отплмывели сперильнымыи кренкоих, ло до риги и‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 12:13:11,574 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 12:13:11,616 tfaip.base.scenario.util.print: 
+  CER:  0.06521739130434782
+  PRED: '‪магиат 1елдон Адельсон, 77 летний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 12:13:11,628 tfaip.base.scenario.util.print: 
+  CER:  0.14634146341463414
+  PRED: '‪меканизма скребутся какие-то части, что привело повлениню металическик пили‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 12:13:18,140 tfaip.base.trainer.callbacks.b: Timing TOTAL 00:59:27 | EPOCH 01:07.31 | TRAIN 01:04.54 | TEST 00:02.77 | BATCH 0.031s
+INFO     2021-02-08 12:13:18,140 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 02:28.62 | TRAIN 02:21.89 | TEST 00:06.74 | BATCH 0.069s
+INFO     2021-02-08 12:13:18,140 tfaip.base.trainer.callbacks.e: No better value of val_CER = 0.07883913069963455 found. Keeping best = 0.07422486692667007
+INFO     2021-02-08 12:13:18,142 tfaip.base.trainer.callbacks.l: Results of epoch   53: CER: 0.0516 - ctc_loss: 8.6357 - loss: 8.6357 - val_CER: 0.0788 - val_ctc_loss: 22.7182 - val_loss: 22.7182
+INFO     2021-02-08 12:13:18,155 tfaip.base.trainer.callbacks.l: Start of epoch   54
+INFO     2021-02-08 12:15:36,451 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 12:15:36,458 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪оказалась на территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 12:15:36,467 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 12:15:36,478 tfaip.base.scenario.util.print: 
+  CER:  0.3404255319148936
+  PRED: '‪еожности прсзидента грсдусмонато Мивабвножин‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 12:15:36,485 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 12:15:36,493 tfaip.base.scenario.util.print: 
+  CER:  0.25
+  PRED: '‪Молитвы и скены проведкнио некоторык оанаке‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 12:15:36,501 tfaip.base.scenario.util.print: 
+  CER:  0.020833333333333332
+  PRED: '‪этот пост был избран бен Зыскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 12:15:36,516 tfaip.base.scenario.util.print: 
+  CER:  0.423728813559322
+  PRED: '‪Еалар отпламывели спецяольных коенякани, л о бо сгв ии‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 12:15:36,525 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 12:15:36,566 tfaip.base.scenario.util.print: 
+  CER:  0.06521739130434782
+  PRED: '‪магнат елдон Адельсон, Т7 летний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 12:15:36,582 tfaip.base.scenario.util.print: 
+  CER:  0.15853658536585366
+  PRED: '‪меканизма скребутся какне-то части, что привело к оеленикю металическик омль о‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 12:15:43,370 tfaip.base.trainer.callbacks.b: Timing TOTAL 01:01:53 | EPOCH 01:08.75 | TRAIN 01:05.90 | TEST 00:02.85 | BATCH 0.032s
+INFO     2021-02-08 12:15:43,370 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 02:25.21 | TRAIN 02:18.17 | TEST 00:07.04 | BATCH 0.067s
+INFO     2021-02-08 12:15:43,370 tfaip.base.trainer.callbacks.e: No better value of val_CER = 0.07673034816980362 found. Keeping best = 0.07422486692667007
+INFO     2021-02-08 12:15:43,374 tfaip.base.trainer.callbacks.l: Results of epoch   54: CER: 0.0517 - ctc_loss: 8.6625 - loss: 8.6625 - val_CER: 0.0767 - val_ctc_loss: 21.1503 - val_loss: 21.1503
+INFO     2021-02-08 12:15:43,386 tfaip.base.trainer.callbacks.l: Start of epoch   55
+INFO     2021-02-08 12:18:01,797 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 12:18:01,804 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪оказалась на территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 12:18:01,811 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 12:18:01,824 tfaip.base.scenario.util.print: 
+  CER:  0.3829787234042553
+  PRED: '‪олжности президента трсдтоманаате Мивабвиежим‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 12:18:01,831 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 12:18:01,839 tfaip.base.scenario.util.print: 
+  CER:  0.29545454545454547
+  PRED: '‪Молитвы и скены проведкнио нскотонык овчаке‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 12:18:01,846 tfaip.base.scenario.util.print: 
+  CER:  0.041666666666666664
+  PRED: '‪этот пост бвл избран бен Зыскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 12:18:01,858 tfaip.base.scenario.util.print: 
+  CER:  0.3728813559322034
+  PRED: '‪Санар отамовали спецяальньныи коеянкани до бол стиа и‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 12:18:01,866 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 12:18:01,917 tfaip.base.scenario.util.print: 
+  CER:  0.08695652173913043
+  PRED: '‪магнат 1елдон Адельсон, Т7 етний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 12:18:01,931 tfaip.base.scenario.util.print: 
+  CER:  0.15853658536585366
+  PRED: '‪меканизма скребутся какне-то части, что привело к пвлениню металичнскик пили‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 12:18:08,592 tfaip.base.trainer.callbacks.b: Timing TOTAL 01:04:18 | EPOCH 01:10.14 | TRAIN 01:07.22 | TEST 00:02.92 | BATCH 0.033s
+INFO     2021-02-08 12:18:08,592 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 02:25.21 | TRAIN 02:18.30 | TEST 00:06.91 | BATCH 0.067s
+INFO     2021-02-08 12:18:08,593 tfaip.base.trainer.callbacks.e: Early stopping progressed. (remaining iteration without improvement: 2)
+INFO     2021-02-08 12:18:08,593 tfaip.base.trainer.callbacks.e: No better value of val_CER = 0.0778786912560463 found. Keeping best = 0.07422486692667007
+INFO     2021-02-08 12:18:08,594 tfaip.base.trainer.callbacks.l: Results of epoch   55: CER: 0.0512 - ctc_loss: 8.5481 - loss: 8.5481 - val_CER: 0.0779 - val_ctc_loss: 20.9753 - val_loss: 20.9753
+INFO     2021-02-08 12:18:08,608 tfaip.base.trainer.callbacks.l: Start of epoch   56
+INFO     2021-02-08 12:20:29,246 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 12:20:29,260 tfaip.base.scenario.util.print: 
+  CER:  0.023809523809523808
+  PRED: '‪оказалась иа территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 12:20:29,272 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 12:20:29,286 tfaip.base.scenario.util.print: 
+  CER:  0.3829787234042553
+  PRED: '‪опяности преидена гиедусмониате Дисвабввеки‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 12:20:29,295 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 12:20:29,306 tfaip.base.scenario.util.print: 
+  CER:  0.25
+  PRED: '‪Молтвы и скены проведкнио некоторых овчжаке‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 12:20:29,314 tfaip.base.scenario.util.print: 
+  CER:  0.041666666666666664
+  PRED: '‪этот пост быил избран бен Зыскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 12:20:29,327 tfaip.base.scenario.util.print: 
+  CER:  0.3898305084745763
+  PRED: '‪Салар втамоывали спериольньмыи кренакани, до бои сиои ии‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 12:20:29,340 tfaip.base.scenario.util.print: 
+  CER:  0.018518518518518517
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавктазу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 12:20:29,384 tfaip.base.scenario.util.print: 
+  CER:  0.06521739130434782
+  PRED: '‪магнат Шепдон Адельсон, Т7 летний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 12:20:29,399 tfaip.base.scenario.util.print: 
+  CER:  0.13414634146341464
+  PRED: '‪меканизма скребутся какине-то части, что привело к пвлению металичнскик пол в‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 12:20:35,974 tfaip.base.trainer.callbacks.b: Timing TOTAL 01:06:45 | EPOCH 01:11.52 | TRAIN 01:08.53 | TEST 00:02.99 | BATCH 0.033s
+INFO     2021-02-08 12:20:35,974 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 02:27.37 | TRAIN 02:20.53 | TEST 00:06.84 | BATCH 0.069s
+INFO     2021-02-08 12:20:35,975 tfaip.base.trainer.callbacks.e: No better value of val_CER = 0.07629188895225525 found. Keeping best = 0.07422486692667007
+INFO     2021-02-08 12:20:35,976 tfaip.base.trainer.callbacks.l: Results of epoch   56: CER: 0.0513 - ctc_loss: 8.5360 - loss: 8.5360 - val_CER: 0.0763 - val_ctc_loss: 21.0997 - val_loss: 21.0997
+INFO     2021-02-08 12:20:35,990 tfaip.base.trainer.callbacks.l: Start of epoch   57
+INFO     2021-02-08 12:22:54,188 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 12:22:54,197 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪оказалась на территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 12:22:54,204 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 12:22:54,226 tfaip.base.scenario.util.print: 
+  CER:  0.3829787234042553
+  PRED: '‪ожности преидента гедуомониато Диовабвтожи‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 12:22:54,234 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 12:22:54,241 tfaip.base.scenario.util.print: 
+  CER:  0.22727272727272727
+  PRED: '‪Волтвы и скены проведкнио некоторых оврндке‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 12:22:54,249 tfaip.base.scenario.util.print: 
+  CER:  0.041666666666666664
+  PRED: '‪этот пост бвл избран вен Зыскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 12:22:54,260 tfaip.base.scenario.util.print: 
+  CER:  0.4406779661016949
+  PRED: '‪Сахар втламывали соерянльньныи коеанкани, о до ст‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 12:22:54,269 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 12:22:54,314 tfaip.base.scenario.util.print: 
+  CER:  0.06521739130434782
+  PRED: '‪магнат елдон Адельсон, Т7летний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 12:22:54,326 tfaip.base.scenario.util.print: 
+  CER:  0.18292682926829268
+  PRED: '‪меканизма скребутся какне-то части, что привел к повлениню металичнесик нол вв‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 12:23:01,042 tfaip.base.trainer.callbacks.b: Timing TOTAL 01:09:10 | EPOCH 01:12.81 | TRAIN 01:09.75 | TEST 00:03.06 | BATCH 0.034s
+INFO     2021-02-08 12:23:01,043 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 02:25.05 | TRAIN 02:18.10 | TEST 00:06.95 | BATCH 0.067s
+INFO     2021-02-08 12:23:01,043 tfaip.base.trainer.callbacks.e: No better value of val_CER = 0.07988307625055313 found. Keeping best = 0.07422486692667007
+INFO     2021-02-08 12:23:01,045 tfaip.base.trainer.callbacks.l: Results of epoch   57: CER: 0.0513 - ctc_loss: 8.5556 - loss: 8.5556 - val_CER: 0.0799 - val_ctc_loss: 20.5711 - val_loss: 20.5711
+INFO     2021-02-08 12:23:01,054 tfaip.base.trainer.callbacks.l: Start of epoch   58
+INFO     2021-02-08 12:25:20,689 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 12:25:20,697 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪оказалась на территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 12:25:20,704 tfaip.base.scenario.util.print: 
+  CER:  0.02127659574468085
+  PRED: '‪лидерами - элитой в шпроком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 12:25:20,716 tfaip.base.scenario.util.print: 
+  CER:  0.425531914893617
+  PRED: '‪врляности преидента гросдуомонаате Диоесабеножии‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 12:25:20,723 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 12:25:20,731 tfaip.base.scenario.util.print: 
+  CER:  0.20454545454545456
+  PRED: '‪Молитвы и скены проведкния некоторык оврноке‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 12:25:20,739 tfaip.base.scenario.util.print: 
+  CER:  0.020833333333333332
+  PRED: '‪этот пост был избран бен Зыскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 12:25:20,754 tfaip.base.scenario.util.print: 
+  CER:  0.3389830508474576
+  PRED: '‪Сахар втламывели сперяальнымыи коеанкаи, добол еит и ио‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 12:25:20,762 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 12:25:20,804 tfaip.base.scenario.util.print: 
+  CER:  0.06521739130434782
+  PRED: '‪магнат 1елдон Адельсон, Т7 летний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 12:25:20,817 tfaip.base.scenario.util.print: 
+  CER:  0.18292682926829268
+  PRED: '‪меканизма скребутся какне-то части, что привело к повленю металинекик нол‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 12:25:27,624 tfaip.base.trainer.callbacks.b: Timing TOTAL 01:11:37 | EPOCH 01:14.08 | TRAIN 01:10.95 | TEST 00:03.13 | BATCH 0.035s
+INFO     2021-02-08 12:25:27,624 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 02:26.57 | TRAIN 02:19.52 | TEST 00:07.05 | BATCH 0.068s
+INFO     2021-02-08 12:25:27,624 tfaip.base.trainer.callbacks.e: No better value of val_CER = 0.07819187641143799 found. Keeping best = 0.07422486692667007
+INFO     2021-02-08 12:25:27,626 tfaip.base.trainer.callbacks.l: Results of epoch   58: CER: 0.0506 - ctc_loss: 8.3937 - loss: 8.3937 - val_CER: 0.0782 - val_ctc_loss: 21.4927 - val_loss: 21.4927
+INFO     2021-02-08 12:25:27,640 tfaip.base.trainer.callbacks.l: Start of epoch   59
+INFO     2021-02-08 12:27:46,434 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 12:27:46,447 tfaip.base.scenario.util.print: 
+  CER:  0.023809523809523808
+  PRED: '‪оказалась иа территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 12:27:46,454 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 12:27:46,464 tfaip.base.scenario.util.print: 
+  CER:  0.46808510638297873
+  PRED: '‪вехности празидента трсдуомониате Диевабвеомти‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 12:27:46,471 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 12:27:46,479 tfaip.base.scenario.util.print: 
+  CER:  0.29545454545454547
+  PRED: '‪Молитвы и скены проведкнио искоторык овноке‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 12:27:46,486 tfaip.base.scenario.util.print: 
+  CER:  0.020833333333333332
+  PRED: '‪этот пост был избран вен Зыскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 12:27:46,499 tfaip.base.scenario.util.print: 
+  CER:  0.4745762711864407
+  PRED: '‪Салар втамоывалми соеряолоньвыи коенакани, о бол ст ои‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 12:27:46,508 tfaip.base.scenario.util.print: 
+  CER:  0.018518518518518517
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавктазу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 12:27:46,548 tfaip.base.scenario.util.print: 
+  CER:  0.06521739130434782
+  PRED: '‪магнат Шелдон Адельсон, Т7етний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 12:27:46,561 tfaip.base.scenario.util.print: 
+  CER:  0.15853658536585366
+  PRED: '‪меканизма скребутся какие-то части, что привело кповлениню металоичнекик о в в‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 12:27:53,196 tfaip.base.trainer.callbacks.b: Timing TOTAL 01:14:02 | EPOCH 01:15.29 | TRAIN 01:12.10 | TEST 00:03.19 | BATCH 0.035s
+INFO     2021-02-08 12:27:53,196 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 02:25.56 | TRAIN 02:18.69 | TEST 00:06.87 | BATCH 0.068s
+INFO     2021-02-08 12:27:53,196 tfaip.base.trainer.callbacks.e: No better value of val_CER = 0.07829627394676208 found. Keeping best = 0.07422486692667007
+INFO     2021-02-08 12:27:53,198 tfaip.base.trainer.callbacks.l: Results of epoch   59: CER: 0.0504 - ctc_loss: 8.3881 - loss: 8.3881 - val_CER: 0.0783 - val_ctc_loss: 21.1494 - val_loss: 21.1494
+INFO     2021-02-08 12:27:53,212 tfaip.base.trainer.callbacks.l: Start of epoch   60
+INFO     2021-02-08 12:30:10,534 tfaip.base.scenario.util.print: Printing Evaluation Results of 10 Instances
+INFO     2021-02-08 12:30:10,541 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪оказалась на территории Западного Берлина.‬'
+  TRUE: '‪оказалась на территории Западного Берлина.‬'
+INFO     2021-02-08 12:30:10,554 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪лидерами - элитой в широком смысле этого слова.‬'
+  TRUE: '‪лидерами - элитой в широком смысле этого слова.‬'
+INFO     2021-02-08 12:30:10,563 tfaip.base.scenario.util.print: 
+  CER:  0.44680851063829785
+  PRED: '‪ер тяности проидента грсдусмонате Диовабвнокти‬'
+  TRUE: '‪должности президента предусмотрено Лиссабонским‬'
+INFO     2021-02-08 12:30:10,570 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪напротив, традиционно крайне лояльны к нему.‬'
+  TRUE: '‪напротив, традиционно крайне лояльны к нему.‬'
+INFO     2021-02-08 12:30:10,578 tfaip.base.scenario.util.print: 
+  CER:  0.20454545454545456
+  PRED: '‪Молитвы и скены проведкния некоторых пючдке‬'
+  TRUE: '‪Молитвы и схемы проведения некоторых обрядов‬'
+INFO     2021-02-08 12:30:10,585 tfaip.base.scenario.util.print: 
+  CER:  0.020833333333333332
+  PRED: '‪этот пост был избран бен Зыскович, представитель‬'
+  TRUE: '‪этот пост был избран Бен Зыскович, представитель‬'
+INFO     2021-02-08 12:30:10,597 tfaip.base.scenario.util.print: 
+  CER:  0.4745762711864407
+  PRED: '‪Салар отамовели сперяальньми кренлик, л о до нти иили‬'
+  TRUE: '‪Сахар отламывали специальными кусачками, дед был строг и не‬'
+INFO     2021-02-08 12:30:10,606 tfaip.base.scenario.util.print: 
+  CER:  0.0
+  PRED: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+  TRUE: '‪бодрый духом, совершил я пешее путешествие по Кавказу.‬'
+INFO     2021-02-08 12:30:10,656 tfaip.base.scenario.util.print: 
+  CER:  0.043478260869565216
+  PRED: '‪магнат елдон Адельсон, 77 летний председатель‬'
+  TRUE: '‪магнат Шелдон Адельсон, 77-летний председатель‬'
+INFO     2021-02-08 12:30:10,668 tfaip.base.scenario.util.print: 
+  CER:  0.14634146341463414
+  PRED: '‪меканизма скребутся какине-то части, что привело к повленю металичнекикопол в‬'
+  TRUE: '‪механизма скребутся какие-то части, что привело к появлению металлических опилок в‬'
+INFO     2021-02-08 12:30:17,190 tfaip.base.trainer.callbacks.b: Timing TOTAL 01:16:26 | EPOCH 01:16.44 | TRAIN 01:13.18 | TEST 00:03.25 | BATCH 0.036s
+INFO     2021-02-08 12:30:17,190 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 02:23.98 | TRAIN 02:17.21 | TEST 00:06.77 | BATCH 0.067s
+INFO     2021-02-08 12:30:17,191 tfaip.base.trainer.callbacks.e: Early stopping progressed. (remaining iteration without improvement: 1)
+INFO     2021-02-08 12:30:17,191 tfaip.base.trainer.callbacks.e: No better value of val_CER = 0.07863033562898636 found. Keeping best = 0.07422486692667007
+INFO     2021-02-08 12:30:17,191 tfaip.base.trainer.callbacks.e: Early stopping. Reached number of maximum iterations without improvement (10 = 10
+INFO     2021-02-08 12:30:17,193 tfaip.base.trainer.callbacks.l: Results of epoch   60: CER: 0.0505 - ctc_loss: 8.3433 - loss: 8.3433 - val_CER: 0.0786 - val_ctc_loss: 22.0357 - val_loss: 22.0357
+INFO     2021-02-08 12:30:17,194 tfaip.base.trainer.callbacks.b: Timing TOTAL 01:16:26 | EPOCH 01:16.44 | TRAIN 01:13.18 | TEST 00:03.25 | BATCH 0.036s
+INFO     2021-02-08 12:30:17,194 tfaip.base.trainer.callbacks.b: Timing LAST           | EPOCH 02:23.98 | TRAIN 02:17.21 | TEST 00:06.77 | BATCH 0.067s
+INFO     2021-02-08 12:30:17,586 calamari_ocr.ocr.training.trai: Training finished
